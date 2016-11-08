@@ -21,9 +21,13 @@ indexCtrl.home = async (ctx, next) => {
     isMobile: isMobile(userAgent).any
   }
 
-  console.log(isMobile(ctx.headers['user-agent']).any)
+  console.log(result.isMobile)
 
-  await ctx.render('index', result)
+  if (result.isMobile) {
+    await ctx.render('mobile/index', result)
+  } else {
+    await ctx.render('pc/index', result)
+  }
 }
 
 indexCtrl.edit = async (ctx, next) => {
