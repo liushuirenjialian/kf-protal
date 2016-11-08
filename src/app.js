@@ -75,19 +75,22 @@ server.on('error', (error) => {
       console.error(port + ' is already in use')
       process.exit(1)
       break
+    case 'uncaughtException':
+      // 打印出错误
+      console.log(error)
+      // 打印出错误的调用栈方便调试
+      console.log(error.stack)
+      break
     default:
-      throw error
+      // 打印出错误
+      console.log(error)
+      // 打印出错误的调用栈方便调试
+      console.log(error.stack)
+      break
   }
 })
 server.on('listening', () => {
   console.log('Listening on port: %d', port)
-})
-
-process.on('uncaughtException', function (err) {
-  // 打印出错误
-  console.log(err)
-  // 打印出错误的调用栈方便调试
-  console.log(err.stack)
 })
 
 export default app

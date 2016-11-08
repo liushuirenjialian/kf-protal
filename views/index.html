@@ -8,8 +8,18 @@
         {{ title }}
       </p>
       <ul>
-        {% for item in list %}
-        <li>{{ item }}</li>
+        {% for item in bannerList %}
+        <li><a href="#">{{ item.title }}</a> {{ item.imgurl }}</li>
+        {% endfor %}
+      </ul>
+      <ul>
+        {% for item in productList %}
+        <li><a href="#">{{ item.proname }}</a> {{ item.imgurl }}</li>
+        {% endfor %}
+      </ul>
+      <ul>
+        {% for item in FriendlyList %}
+        <li><a href="#">{{ item.friendname }}</a> {{ item.imgurl }}</li>
         {% endfor %}
       </ul>
       <h1>
