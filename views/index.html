@@ -1,0 +1,16 @@
+{% extends "layouts/layout.html" %}
+
+{% block header %}koa2-template{% endblock %}
+
+{% block content %}
+    <div class="">
+      <p>
+        {{ title }}
+      </p>
+      <ul>
+        {% for item in list %}
+        <li>{{ item }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+{% endblock %}
