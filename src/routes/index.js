@@ -3,6 +3,6 @@ import indexCtrl from '../controllers/indexCtrl'
 
 const router = Router()
 
-router.get('/', indexCtrl)
+router.get('/', indexCtrl.home)
 
 export default router

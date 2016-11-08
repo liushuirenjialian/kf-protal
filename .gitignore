@@ -35,7 +35,7 @@ node_modules
 # app // compiled js
 app
 
-# VSCODE 
+# VSCODE
 .vscode
 
 # JETBRAIN
@@ -43,4 +43,5 @@ app
 
 src/config/*
 !src/config/index.js
+!src/config/default.js
 !src/config/default.js.idea
