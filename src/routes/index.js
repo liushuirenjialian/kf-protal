@@ -9,6 +9,9 @@ router.get('/', indexCtrl.home)
 // 游戏首页
 router.get('/:gameId', indexCtrl.gameHome)
 
+// faq 详情
+router.get('/detail/:id', indexCtrl.faqDetail)
+
 // 游戏首页查询, 先用ajax查询吧
 // router.get('/:gameId/:query', indexCtrl.gameQuery)
 
@@ -17,5 +20,8 @@ router.get('/:gameId/:categoryId', indexCtrl.gameCategory)
 
 // 游戏分类首页的查询，先用ajax查询吧
 // router.get('/:gameId/:categoryId/:query', indexCtrl.gameCategoryQuery)
+
+
+router.post('/post/like/:id', indexCtrl.faqLike)
 
 export default router

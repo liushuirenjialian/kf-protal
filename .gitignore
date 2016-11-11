@@ -43,5 +43,5 @@ app
 
 src/config/*
 !src/config/index.js
-!src/config/default.js
-!src/config/default.js.idea
+src/config/default.js
+!src/config/default.js.bak

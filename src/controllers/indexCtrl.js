@@ -34,6 +34,7 @@ indexCtrl.gameHome = async (ctx, next) => {
   const gameId = ctx.params.gameId
   const url = `${faqApiUrl}/api/open/faq/gameHome/${gameId}`
   const resultMap = await httpService.request(ctx, 'get', url)
+
   var result = {
     page: config.page,
     game: resultMap.game,
@@ -43,11 +44,37 @@ indexCtrl.gameHome = async (ctx, next) => {
   await ctx.render('pc/gameHome', result)
 }
 
+indexCtrl.faqDetail = async (ctx, next) => {
+  const id = ctx.params.id
+  const url = `${faqApiUrl}/api/open/faq/faqDetail/${id}`
+  const resultMap = await httpService.request(ctx, 'get', url)
+  const getGameurl = `${faqApiUrl}/api/open/faq/allGame`
+  const allGameMap = await httpService.request(ctx, 'GET', getGameurl)
+  var result = {
+    page: config.page,
+    faq: resultMap.faq,
+    recommendFaq: resultMap.recommendFaq,
+    gameList: allGameMap.data
+  }
+  await ctx.render('pc/faqDetail', result)
+}
+
+indexCtrl.faqLike = async (ctx, next) => {
+  const id = ctx.params.id
+  const url = `${faqApiUrl}/api/open/faq/like`
+  var params = {}
+  params.id = id
+  const resultMap = await httpService.request(ctx, 'POST', url , params)
+
+  ctx.body = resultMap;
+}
+
+
+
 indexCtrl.gameCategory = async (ctx, next) => {
   const gameId = ctx.params.gameId
   const categoryId = ctx.params.categoryId
   const url = `${faqApiUrl}/api/open/faq/gameCategory/${gameId}/${categoryId}`
-  // const result = await httpService.request(ctx, 'get', url)
 
   console.log(result)
 
