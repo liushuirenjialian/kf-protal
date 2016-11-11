@@ -1,0 +1,409 @@
+body {
+    background-color: rgb(240, 244, 246) !important;
+}
+
+.wrap {
+    width: 1000px;
+    background-color: #fff;
+    padding-top: 40px;
+    margin: 0 auto;
+}
+
+.w-writter-size {
+    margin-left: 28px;
+    color: #000;
+    font-size: 24px;
+    margin-bottom: 23px;
+}
+
+.w-secWidth {
+    width: 1000px;
+    min-height: 110px;
+    margin: 0 auto;
+}
+
+.w-overflow {
+    overflow: hidden;
+    // width: 1000px;
+}
+
+
+/*// slide begin*/
+
+#owl .owl-item div {
+    padding: 5px;
+}
+
+#owl .owl-item img {
+    display: block;
+    width: 100%;
+    height: auto;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+
+
+/*// end*/
+
+section.container .w-secBar .hot-item {}
+
+.hot-item span.hotgame {
+    float: left;
+}
+
+
+/*// 搜索*/
+
+form {
+    float: right;
+}
+
+.hot-item .sosu {
+    margin-right: 10px;
+    float: right;
+    position: relative;
+}
+
+.hot-item .search {
+    display: inline-block;
+    width: 23px;
+    height: 22px;
+    background: url(../images/KF_09.png)no-repeat;
+    right: 9px;
+    position: absolute;
+    top: 8px;
+}
+
+#select {
+    float: right;
+    width: 120px;
+    height: 35px;
+}
+
+input[type="text"] {
+    outline: none;
+    width: 280px;
+    height: 40px;
+    border-radius: 6px;
+    text-align: center;
+    border: 1px solid rgba(41, 25, 25, 0.05);
+    box-shadow: 2px 3px 7px #EFEFF6;
+    border: 1px solid #D8D8D2;
+}
+
+
+/*// line.*/
+
+i.w-line-blue {
+    display: block;
+    border-bottom: 2px solid #271F1F;
+    /*width: 151px;*/
+}
+
+.w-secBar span#w-secbar-line {
+    border-bottom: 2px solid #CED0D2;
+    display: block;
+    width: 1000px;
+    margin-top: 45px;
+}
+
+
+/*// hotsection*/
+
+.index ul.hots span.samn-let {
+    font-weight: 700;
+    text-align: center;
+    width: 316px;
+    height: 62px;
+    background-color: #fff;
+    line-height: 70px;
+    display: inline-block;
+}
+
+.index ul.hots span.samn-let:hover {
+  color: rgb(223, 150, 123);
+}
+
+/*// end*/
+
+.index .hot-content ul.hots li.sanguo {
+    float: left;
+    width: 330px;
+    padding-right: 3px;
+}
+
+.items-two {
+    margin-top: 20px;
+}
+
+.samn {
+    position: relative;
+    width: 329px;
+    height: 240px;
+    margin: 8px;
+}
+
+.samn img {
+  width: 329px;
+}
+
+.samn img:hover {
+  opacity: 0.4;
+  filter: alpha(opacity=40);
+}
+
+
+.all-ones {
+    width: 971px;
+    margin: 27px;
+    /*border: 1px solid red;*/
+}
+
+.all-ones .all-category-one {
+    float: left;
+    background-color: rgb(91, 91, 91);
+    width: 82px;
+    height: 32px;
+    border-radius: 5px;
+    color: white;
+    text-align: center;
+    line-height: 32px;
+}
+
+.all-ones .all-content-one {
+    width: 846px;
+    min-height: 50px;
+    float: right;
+    /*border: 1px solid red;*/
+}
+
+.all-content-one li a {
+    color: #5a5b5b;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.all-content-one ul li {
+    display: inline-block;
+    width: 163px;
+    height: 42px;
+    text-align: center;
+}
+
+.allgame-font {}
+
+#w-secbar-line-all {
+    background: url(../images/line.png)no-repeat;
+    width: 1000px;
+    height: 2px;
+    display: inline-block;
+    /*border: 1px solid grey;*/
+}
+
+.samn-shadow {
+    display: inline-block;
+    width: 316px;
+    height: 172px;
+    position: absolute;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.45);
+}
+
+.sanguo a:hover {
+    color: rgb(223, 150, 123);
+}
+
+.index-one ul.w-pay.clearfix {
+    width: 484px;
+    height: 280px;
+    background-color: #fff;
+    float: left;
+    margin: 8px;
+}
+
+.index-one ul.w-pay li.w-faq {
+    font-size: 21px;
+    color: #2183d6;
+    position: relative;
+    width: 476px;
+    border-bottom: 1px solid #e1e1e1;
+    height: 66px;
+}
+
+.index-one ul.w-pay span {
+    font-weight: bold;
+    position: absolute;
+    left: 22px;
+}
+
+.index-one ul.w-pay li.w-faq a {
+    color: rgb(225, 225, 225);
+    position: absolute;
+    right: 0;
+    margin-right: 30px;
+    font-size: 15px;
+    /*border: 1px solid red;*/
+}
+
+.index-one ul.w-pay li {
+    line-height: 51px;
+    height: 33px;
+    padding: 14px;
+}
+
+.index-one ul.w-pay li.w-faq-list a {
+    color: #5a5b5b;
+    font-size: 16px;
+}
+
+.index-one ul li.w-faq-list i {
+    background: url(../images/touyuan.png) no-repeat;
+    margin-right: 6px;
+    line-height: 16px;
+    display: inline-block;
+    width: 3px;
+    height: 3px;
+}
+
+.index-one .hot-content {
+    margin-top: 27px;
+}
+
+.feedback ul.w-feedpack {
+    width: 1000px;
+    height: 556px;
+    background: #fff;
+    margin-top: 40px;
+}
+
+ul.w-feedpack.clearfix {
+    width: 1000px;
+    height: 556px;
+    background: #fff;
+    margin-top: 40px;
+}
+
+.w-feedpack .m-user-form {
+    font-size: 14px;
+}
+
+.w-feedpack .m-user-item {
+    margin: 20px 0;
+    border: 1px solid #fff;
+}
+
+.w-feedpack .w-form-name {
+    width: 121px;
+    padding-top: 4px;
+    padding-right: 4px;
+}
+
+#title,
+.w-form-cont {
+    /*// position: relative;*/
+    margin-top: 14px;
+}
+
+.w-form-item {
+    margin: 20px 0;
+    /* position: relative; */
+    /* zoom: 1; */
+    border: 1px solid #fff;
+}
+
+.w-user-form.w-form {
+    padding: 20px;
+}
+
+.w-form-cont {
+    overflow: hidden;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.btn-set {
+    text-align: center;
+}
+
+.w-form-tishi span {
+    text-align: center;
+    color: #5a5b5b;
+    font-size: 20px;
+}
+
+.w-form-tishi {
+    text-align: center;
+    color: #5a5b5b;
+    font-size: 20px;
+    padding-top: 250px;
+}
+
+.w-form-tishi a {}
+
+.w-allbg {
+    width: 1000px;
+    background-color: #fff;
+}
+
+.w-allcolorfont {
+    color: #5a5b5b;
+}
+
+div.faqcontact ul.w-faqcontact.clearfix {
+    min-height: 330px;
+    padding: 25px;
+}
+
+.faqguanlian ul.w-faqcon-two {
+    margin-top: 35px;
+    min-height: 220px;
+    margin-bottom: 45px;
+}
+
+.faqfankui .w-faqfaqcontact-title {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.faqfankui .w-faqfaqcontact-content p {
+    line-height: 25px;
+}
+
+.faqfankui li.w-faqfaqcontact-content {
+    padding-top: 21px;
+    /* line-height: 14px; */
+}
+
+.faqfankui .w-faqcontact-assess {
+    float: right;
+}
+
+.faqguanlian li.w-faq-list {
+    line-height: 51px;
+    height: 33px;
+    padding: 14px;
+}
+
+.faqguanlian li.w-faq-list a {
+    font-size: 15px;
+    color: #5a5b5b;
+}
+
+.w-faqfaqcontact-num {
+    padding-left: 11px;
+    padding-right: 11px;
+    color: #d45b5b;
+}
+
+.fankui-detail .w-faqfaqcontact-content {
+    min-height: 430px;
+}
+
+.w-faqcontact li.paging {
+    text-align: center;
+}
+
+.dropdown-toggle {
+  min-width: 110px;
+}

@@ -1,0 +1,47 @@
+.w-secBar {
+    margin-top: 52px;
+    min-height: 700px;
+}
+
+textarea#textarea {
+    padding: 8px;
+    border: 1px solid #ABABAB;
+    border-radius: 3px;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, .05) inset;
+    outline: none;
+}
+
+.btn {
+    background-color: rgba(219, 127, 76, 1);
+    width: 94px;
+    height: 36px;
+    line-height: 35px;
+    display: inline-block;
+    color: #fff;
+    /* background-color: #db3652; */
+    /* text-align: center; */
+    border-radius: 5px;
+}
+
+.clearfix {
+    *zoom: 1;
+}
+
+.clearfix:before,
+.clearfix:after {
+    display: table;
+    content: "";
+    line-height: 0;
+}
+
+.clearfix:after,
+.row:after {
+    clear: both;
+}
+
+.row:before,
+.row:after {
+    display: table;
+    content: "";
+    line-height: 0;
+}

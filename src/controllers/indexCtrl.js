@@ -13,18 +13,16 @@ indexCtrl.home = async (ctx, next) => {
   const productMap = await httpService.request(ctx, 'GET', apiUrl + '/h/api/index/getProductOnMark')
   const FriendlyMap = await httpService.request(ctx, 'GET', apiUrl + '/h/api/index/getFriendlyList')
 
+  const url = `${faqApiUrl}/api/open/faq/allGame`
+  const allGameMap = await httpService.request(ctx, 'GET', url)
+
   var result = {
-    title,
-    list,
-    userAgent,
+    page: config.page,
     bannerList: bannerMap.bannerList,
     productList: productMap.productList,
     FriendlyList: FriendlyMap.rows,
-    isMobile: isMobile(userAgent).any
+    gameList: allGameMap.data
   }
-
-  console.log(result.isMobile)
-
   if (result.isMobile) {
     await ctx.render('mobile/index', result)
   } else {
@@ -35,18 +33,21 @@ indexCtrl.home = async (ctx, next) => {
 indexCtrl.gameHome = async (ctx, next) => {
   const gameId = ctx.params.gameId
   const url = `${faqApiUrl}/api/open/faq/gameHome/${gameId}`
-  const result = await httpService.request(ctx, 'get', url)
-
-  console.log(result)
-
-  await ctx.render('pc/game_home', result)
+  const resultMap = await httpService.request(ctx, 'get', url)
+  var result = {
+    page: config.page,
+    game: resultMap.game,
+    gameList: resultMap.gameList,
+    categoryQueryList: resultMap.categoryQueryList
+  }
+  await ctx.render('pc/gameHome', result)
 }
 
 indexCtrl.gameCategory = async (ctx, next) => {
   const gameId = ctx.params.gameId
   const categoryId = ctx.params.categoryId
   const url = `${faqApiUrl}/api/open/faq/gameCategory/${gameId}/${categoryId}`
-  const result = await httpService.request(ctx, 'get', url)
+  // const result = await httpService.request(ctx, 'get', url)
 
   console.log(result)
 

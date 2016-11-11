@@ -1,0 +1,31 @@
+footer {
+    width: 100%;
+    background-color: rgb(35, 35, 35);
+    height: 237px;
+    padding-top: 45px;
+}
+
+footer p {
+    text-align: center;
+    color: white;
+    line-height: 36px;
+    // padding-top: 6px;
+}
+
+// header
+.index header.w-secheader {
+    height: 110px;
+    background-color: #fff;
+}
+
+header.w-secheader {
+    background-color: #fff;
+}
+
+a.logo {
+    background: url(../images/KF_logo.png) no-repeat !important;
+    width: 287px;
+    height: 75px;
+    text-indent: -9999px;
+    // margin-left: 400px;
+}

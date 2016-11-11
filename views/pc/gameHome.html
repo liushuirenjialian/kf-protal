@@ -1,0 +1,59 @@
+{% extends "./layout.html" %}
+{% block title %}{{ game.name }} - {{ page.title }}{% endblock %}
+{% block keywords %}{{ page.keywords }}{% endblock %}
+{% block description %}{{ page.description }}{% endblock %}
+
+{% block content %}
+  <div class="index-one">
+        <section class="w-secWidth">
+            <div class="w-secBar clearfix">
+                <div class="hot-item clearfix">
+                    <span class="hotgame w-writter-size">{{ game.name}}</span>
+                    <div class="sosu">
+                        <input type="text" placeholder="请输入问题关键字">
+                        <span class="search w-Sear"></span></div>
+                    <!-- 下拉框 -->
+                    <div class="dropdown" id="select">
+                        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            <label id="selectLabel">{{ game.name}}</label>
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                          {% for item in gameList %}
+                            <li><a href="#">{{ item.name }}</a></li>
+                          {% endfor %}
+                        </ul>
+                    </div>
+                    <!-- 分割线 -->
+                    <span id="w-secbar-line-all">
+                </div>
+                <div class="hot-content">
+                      {% for item in categoryQueryList %}
+                         <ul class="w-pay clearfix">
+                            <li class="w-faq">
+                              <span>{{item.categoryFaq.name}}</span>
+                              <a href="/{{game.id}}/{{item.categoryFaq.id}}">更多</a>
+                            </li>
+                              {% for query in item.queryList %}
+                                <li class="w-faq-list"><i></i><a href="/detail/{{query.id}}">{{query.asked}}</a></li>
+                              {% endfor %}
+                          </ul>
+                      {% endfor %} 
+                </div>
+            </div>
+
+        </section>
+    </div>
+{% endblock %}
+
+
+{% block afterScript %}
+ <script type="text/javascript">
+  var select = $("#select");
+  var bt = $("#selectLabel");
+  select.find("li").click(function(){
+    var name = $(this).find("a").text();
+    bt.text(name);
+  })
+ </script>
+{% endblock %}

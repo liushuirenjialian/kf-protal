@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="keywords" content="{% block keywords %}{% endblock %}">
+    <meta name="description" content="{% block description %}{% endblock %}">
+    <link rel="stylesheet" type="text/css" href="/static/css/pc/index.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/pc/style.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/pc/footer.css">
+    <link rel="stylesheet" href="/static/js/owl-carousel/owl.carousel.css">
+    <link rel="stylesheet" href="/static/js/owl-carousel/owl.theme.css">
+    <script src="/static/js/jquery-1.10.2.min.js" charset="utf-8"></script>
+    <script src="/static/js/owl-carousel/owl.carousel.js"></script>
+    <link rel="stylesheet" href="/static/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/bootstrap/bootstrap-theme.min.css">
+    <script src="/static/bootstrap/bootstrap.min.js"></script>
+</head>
+  <body id="app">
+      <header class="w-secheader">
+        <div class="container">
+            <a class="logo navbar-header" href="/"></a>
+        </div>
+      </header>
+
+      <div class="page-content" style="min-height:680px;"> 
+      {% block content %}
+
+      {% endblock %}
+      </div>
+      <footer>
+         <p>温馨提示：抵制不良游戏，拒绝盗版游戏，注意自我保护，谨防受骗上当，适度游戏益脑，沉迷游戏伤身，合理安排时间，享受健康生活
+         </p>
+         <p>Copyright © 2015 Hoolai Games. All Rights Reserved | 互爱互动（北京）科技有限公司版权所有 | 服务协议 | 隐私权保护声明 | 未成年人家长监护</p>
+         <p>京ICP备11034336号-1 网络文化经营许可证-京网文[2014]0904-204号 京公网安备11010502022348</p>
+         <p>北京市石景山区八大处高科技园区西井路3号3号楼9229房间 010-62662622</p>
+      </footer>
+      {% block afterScript %}
+
+      {% endblock %}
+  </body>
+  </html>
+</html>

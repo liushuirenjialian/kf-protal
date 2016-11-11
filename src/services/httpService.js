@@ -16,14 +16,12 @@ httpService.request = async (ctx, _method, _url, data) => {
     headers: _headers,
     form: data
   }
-  console.log(options)
   return new Promise((resolve, reject) => {
     request(options, function (error, response, body) {
       var cookies = response.headers['set-cookie']
       if (cookies !== undefined) {
         ctx.set('set-cookie', cookies)
       }
-      console.log(body)
       if (!error && response.statusCode === 200) {
         const res = JSON.parse(body)
         resolve(res)

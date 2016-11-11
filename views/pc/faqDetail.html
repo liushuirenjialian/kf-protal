@@ -1,0 +1,20 @@
+{% extends "./layout.html" %}
+{% block title %}{{ page.title }}{% endblock %}
+{% block keywords %}{{ page.keywords }}{% endblock %}
+{% block description %}{{ page.description }}{% endblock %}
+
+{% block content %}
+   
+{% endblock %}
+
+
+{% block afterScript %}
+ <script type="text/javascript">
+  var select = $("#select");
+  var bt = $("#selectLabel");
+  select.find("li").click(function(){
+    var name = $(this).find("a").text();
+    bt.text(name);
+  })
+ </script>
+{% endblock %}

@@ -42,11 +42,11 @@ app.use(async (ctx, next) => {
   console.log(`${ctx.method} ${ctx.url} - ${ms}ms`)
 })
 
-var backendURL = config.apiUrl
-app.use('/v1', function (req, res) {
-  var url = backendURL + req.url
-  req.pipe(request(url)).pipe(res)
-})
+// var backendURL = config.apiUrl
+// app.use('/v1', function (req, res) {
+//   var url = backendURL + req.url
+//   req.pipe(request(url)).pipe(res)
+// })
 
 // response router
 app.use(async (ctx, next) => {
