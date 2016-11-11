@@ -1,5 +1,7 @@
 var isMobile = require('ismobilejs')
 import httpService from '../services/httpService'
+import config from '../config'
+const faqApiUrl = config.apiUrl
 var indexCtrl = {}
 
 indexCtrl.home = async (ctx, next) => {
@@ -30,15 +32,25 @@ indexCtrl.home = async (ctx, next) => {
   }
 }
 
-indexCtrl.edit = async (ctx, next) => {
-  const title = 'koa2 edit'
-  var result = {
-    title,
-    layout: 'layouts/layout'
-  }
+indexCtrl.gameHome = async (ctx, next) => {
+  const gameId = ctx.params.gameId
+  const url = `${faqApiUrl}/api/open/faq/gameHome/${gameId}`
+  const result = await httpService.request(ctx, 'get', url)
+
   console.log(result)
 
-  await ctx.render('esConfig_edit', result)
+  await ctx.render('pc/game_home', result)
+}
+
+indexCtrl.gameCategory = async (ctx, next) => {
+  const gameId = ctx.params.gameId
+  const categoryId = ctx.params.categoryId
+  const url = `${faqApiUrl}/api/open/faq/gameCategory/${gameId}/${categoryId}`
+  const result = await httpService.request(ctx, 'get', url)
+
+  console.log(result)
+
+  await ctx.render('pc/game_category', result)
 }
 
 export default indexCtrl

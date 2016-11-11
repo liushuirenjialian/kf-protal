@@ -9,6 +9,7 @@ import koaStatic from 'koa-static-plus'
 import koaOnError from 'koa-onerror'
 import config from './config'
 import koaNunjucks2 from 'koa-nunjucks2'
+import request from 'request'
 
 const app = new Koa()
 const bodyparser = Bodyparser()
@@ -39,6 +40,12 @@ app.use(async (ctx, next) => {
   await next()
   const ms = new Date() - start
   console.log(`${ctx.method} ${ctx.url} - ${ms}ms`)
+})
+
+var backendURL = config.apiUrl
+app.use('/v1', function (req, res) {
+  var url = backendURL + req.url
+  req.pipe(request(url)).pipe(res)
 })
 
 // response router
