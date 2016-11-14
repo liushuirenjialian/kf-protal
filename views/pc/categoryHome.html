@@ -8,7 +8,7 @@
         <section class="w-secWidth">
             <div class="w-secBar clearfix">
                 <div class="hot-item clearfix">
-                    <span class="hotgame w-writter-size">{{ game.name}} - {{categoryFaq.name}}</span>
+                    <span class="hotgame w-writter-size"><a href="/{{game.id}}">{{ game.name}}</a> - {{categoryFaq.name}}</span>
                     <div class="sosu">
                         <input type="text" placeholder="请输入问题关键字" onkeypress="if(event.keyCode==13) {searchByGame();return false;}">
                         <span class="search w-Sear" onclick="searchByGame()"></span></div>
@@ -33,7 +33,7 @@
                             <li class="w-faqfaqcontact-title w-allcolorfont">
                                 <a href="/detail/{{item.id}}"><span>{{item.asked}}</span></a>
                             </li>
-                            <li class="w-faqfaqcontact-content w-allcolorfont">
+                            <li class="w-faqfaqcontact-content w-allcolorfont das">
                                 {{ item.questions }}
                             </li>
                         {% endfor %}

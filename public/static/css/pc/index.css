@@ -5,7 +5,7 @@ body {
 .wrap {
     width: 1000px;
     background-color: #fff;
-    padding-top: 40px;
+     padding-top: 0.5px;
     margin: 0 auto;
 }
 
@@ -223,47 +223,77 @@ i.w-line-blue {
 }
 
 .index-one ul.w-pay li.w-faq {
-    font-size: 21px;
+    font-size: 18px;
     color: #2183d6;
     position: relative;
-    width: 476px;
+    width: 467px;
     border-bottom: 1px solid #e1e1e1;
-    height: 66px;
+    height: 52px;
+        line-height: 52px;
 }
 
 .index-one ul.w-pay span {
-    font-weight: bold;
+        font-weight: bold;
     position: absolute;
     left: 22px;
+    width: 300px;
+    display: inline-block;
+    overflow: hidden;
+    text-overflow: clip;
+    white-space: nowrap;
+    /* width: 457px; */
+    /* border: 1px solid red; */
+    display: inline-block;
 }
 
 .index-one ul.w-pay li.w-faq a {
-    color: rgb(225, 225, 225);
+       color: rgb(225, 225, 225);
     position: absolute;
     right: 0;
     margin-right: 30px;
     font-size: 15px;
-    /*border: 1px solid red;*/
+    /* border: 1px solid red; */
 }
 
 .index-one ul.w-pay li {
-    line-height: 51px;
+    line-height: 20px;
     height: 33px;
-    padding: 14px;
+    /* padding: 14px; */
+    height: 19px;
+    font-size: 14px;
+    line-height: 15px;
+    /* color: white; */
+    /* border: 1px dashed red; */
+    margin-top: 16px;
+    /* margin-bottom: 9px; */
+    margin-left: 16px;
 }
 
 .index-one ul.w-pay li.w-faq-list a {
     color: #5a5b5b;
     font-size: 16px;
+    color: #5a5b5b;
+    font-size: 16px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 400px;
+    /* border: 1px solid red; */
+    display: inline-block;
+    
+    margin-left: 10px;
+    text-decoration: none;
 }
 
 .index-one ul li.w-faq-list i {
     background: url(../images/touyuan.png) no-repeat;
-    margin-right: 6px;
-    line-height: 16px;
+    line-height: 25px;
     display: inline-block;
     width: 3px;
     height: 3px;
+    display: inline-block;
+    color: #f2a356;
+    font-style: normal;
 }
 
 .index-one .hot-content {
@@ -364,6 +394,7 @@ div.faqcontact ul.w-faqcontact.clearfix {
 .faqfankui .w-faqfaqcontact-title {
     font-size: 16px;
     font-weight: bold;
+        padding-top: 25px;
 }
 
 .faqfankui .w-faqfaqcontact-content p {
@@ -371,23 +402,48 @@ div.faqcontact ul.w-faqcontact.clearfix {
 }
 
 .faqfankui li.w-faqfaqcontact-content {
-    padding-top: 21px;
-    /* line-height: 14px; */
+        line-height: 77px;
+    
 }
-
+.das{
+    border-bottom: 1px dashed;
+}
 .faqfankui .w-faqcontact-assess {
     float: right;
+        margin-top: 170px;
 }
 
 .faqguanlian li.w-faq-list {
-    line-height: 51px;
+    line-height: 20px;
     height: 33px;
-    padding: 14px;
+    /* padding: 14px; */
+    height: 19px;
+    font-size: 14px;
+    line-height: 15px;
+    /* color: white; */
+    /* border: 1px dashed red; */
+    margin-top: 16px;
+    /* margin-bottom: 9px; */
+    margin-left: 16px;
+        color: #5a5b5b;
 }
 
 .faqguanlian li.w-faq-list a {
-    font-size: 15px;
+        font-size: 15px;
     color: #5a5b5b;
+    color: #5a5b5b;
+    font-size: 16px;
+    color: #5a5b5b;
+    font-size: 16px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 400px;
+    // border: 1px solid red;
+    display: inline-block;
+   
+    margin-left: 10px;
+    text-decoration: none;
 }
 
 .w-faqfaqcontact-num {
@@ -397,7 +453,7 @@ div.faqcontact ul.w-faqcontact.clearfix {
 }
 
 .fankui-detail .w-faqfaqcontact-content {
-    min-height: 430px;
+    // min-height: 430px;
 }
 
 .w-faqcontact li.paging {

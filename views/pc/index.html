@@ -81,7 +81,7 @@
                         <ul class="sanguo">
                           {% for item in gameList %}
                             {% if item.categoryId == 1 %}
-                             <li><a class="" href="">{{ item.name }}</a></li>
+                             <li><a href="/{{item.id}}">{{ item.name }}</a></li>
                             {% endif %}
                           {% endfor %}
                         </ul>
