@@ -1,6 +1,6 @@
 {
   "apps": [{
-    "name": "koa2-startkit",
+    "name": "kf-portal",
     "script": "bin/production.js",
     "exec_mode": "cluster",
     "instances": 0,
