@@ -89,10 +89,36 @@ indexCtrl.faqLike = async (ctx, next) => {
 indexCtrl.gameCategory = async (ctx, next) => {
   const gameId = ctx.params.gameId
   const categoryId = ctx.params.categoryId
-  const url = `${faqApiUrl}/api/open/faq/gameCategory/${gameId}/${categoryId}`
+  const query = ctx.query
+  // 包含查询
+  var data = {};
+  data.page = 0
+  data.size = 20
+  if (query.p) {
+    data.page = query.p
+  }
+  var url = `${faqApiUrl}/api/open/faq/categoryHome/${gameId}/${categoryId}?page=${data.page}&size=${data.size}&`
+  const resultMap = await httpService.request(ctx, 'get', url, data)
 
+  var result = {
+    gameId: gameId,
+    categoryId: categoryId,
+    page: config.page,
+    game: resultMap.game,
+    categoryFaq: resultMap.categoryFaq,
+    gameList: resultMap.gameList,
+    categoryQueryList: resultMap.categoryQueryList,
+    total: Number(resultMap.total),
+    totalPages: Number(resultMap.totalPages),
+    page: Number(data.page)
+  }
+  var pages = [];
+  for (var i = 0; i < result.totalPages; i++) {
+    pages.push(i);
+  }
+  result.pages = pages;
 
-  await ctx.render('pc/game_category', result)
+  await ctx.render('pc/categoryHome', result)
 }
 
 indexCtrl.feedback = async (ctx, next) => {
