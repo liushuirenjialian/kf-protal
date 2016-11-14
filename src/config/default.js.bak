@@ -4,8 +4,8 @@
  * @Email i@zeroling.com
  */
 
-const testApi = 'http://192.168.150.117:8080'
-
+const testApi = 'http://192.168.2.27/v1'
+const devApi = 'http://192.168.150.117:8080'
 const onlineApi = 'http://api.kf.hulai.com/v1'
 
 export default {
