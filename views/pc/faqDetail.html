@@ -9,18 +9,18 @@
        <section class="w-secWidth">
            <div class="w-secBar clearfix">
                <div class="hot-item clearfix">
-                   <span class="hotgame w-writter-size"> 探墓风云 - {{faq.categoryFaq.name}}</span>
+                   <span class="hotgame w-writter-size"> {{game.name}} - {{faq.categoryFaq.name}}</span>
                    <div class="sosu">
-                       <input type="text" placeholder="请输入问题关键字">
-                       <span class="search w-Sear"></span></div>
+                     <input type="text" placeholder="请输入问题关键字" onkeypress="if(event.keyCode==13) {searchByGame();return false;}">
+                     <span class="search w-Sear" onclick="searchByGame()"></span></div>
                    <div class="dropdown" id="select">
                        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                         <label id="selectLabel">{{ gameList[0].name}}</label>
+                         <label id="selectLabel" gameId='{{game.id}}'>{{ game.name}}</label>
                          <span class="caret"></span>
                        </button>
                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
                          {% for item in gameList %}
-                           <li><a href="#">{{ item.name }}</a></li>
+                           <li><a href="#" gameId='{{item.id}}'>{{ item.name }}</a></li>
                          {% endfor %}
                        </ul>
                    </div>
@@ -38,7 +38,7 @@
                         </li>
                         <li class="w-faqcontact-assess w-allcolorfont">
                             <div><img src="/static/css/images/star.png" alt="对您有用就赞一下吧~" onclick="iLikes()"><span class="w-faqfaqcontact-num">{{faq.likes}}</span>人觉得有用</div>
-                            <div>没有您想要的内容?试试<a href="">我要纠错</a></div>
+                            <div>没有您想要的内容?试试<a href="/feedback/{{faq.id}}">我要纠错</a></div>
                         </li>
                     </ul>
                     <div class="w-faqcon-two clearfix faqguanlian">
@@ -63,12 +63,6 @@
 
 {% block afterScript %}
  <script type="text/javascript">
-  var select = $("#select");
-  var bt = $("#selectLabel");
-  select.find("li").click(function(){
-    var name = $(this).find("a").text();
-    bt.text(name);
-  })
   var faq_id = {{faq.id}};
   function iLikes () {
     var isLike = localStorage[faq_id];

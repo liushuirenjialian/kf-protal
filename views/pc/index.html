@@ -21,16 +21,16 @@
             <div class="hot-item clearfix">
                 <span class="hotgame w-writter-size">热门游戏</span>
                 <div class="sosu">
-                    <input type="text" placeholder="请输入问题关键字">
-                    <span class="search w-Sear"></span></div>
+                  <input type="text" placeholder="请输入问题关键字" onkeypress="if(event.keyCode==13) {searchByGame();return false;}">
+                  <span class="search w-Sear" onclick="searchByGame()"></span></div>
                 <div class="dropdown" id="select">
                     <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                        <label id="selectLabel">{{ gameList[0].name}}</label>
+                        <label id="selectLabel" gameId="{{ gameList[0].id}}">{{ gameList[0].name}}</label>
                         <span class="caret"></span>
                     </button>
                     <ul class="dropdown-menu"  role="menu" aria-labelledby="dropdownMenu1">
                         {% for item in gameList %}
-                          <li><a href="#">{{ item.name }}</a></li>
+                          <li><a href="#" gameId={{item.id}}>{{ item.name }}</a></li>
                         {% endfor %}
                     </ul>
                 </div>
@@ -108,11 +108,5 @@
           // lazyLoad: true,
       });
   });
-  var select = $("#select");
-  var bt = $("#selectLabel");
-  select.find("li").click(function(){
-    var name = $(this).find("a").text();
-    bt.text(name);
-  })
  </script>
 {% endblock %}

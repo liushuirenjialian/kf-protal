@@ -32,7 +32,12 @@ indexCtrl.home = async (ctx, next) => {
 
 indexCtrl.gameHome = async (ctx, next) => {
   const gameId = ctx.params.gameId
-  const url = `${faqApiUrl}/api/open/faq/gameHome/${gameId}`
+  const query = ctx.query
+  // 包含查询
+  var url = `${faqApiUrl}/api/open/faq/gameHome/${gameId}`
+  if (query.q) {
+    url = `${faqApiUrl}/api/open/faq/gameHome/${gameId}/${query.q}`
+  }
   const resultMap = await httpService.request(ctx, 'get', url)
 
   var result = {
@@ -56,6 +61,16 @@ indexCtrl.faqDetail = async (ctx, next) => {
     recommendFaq: resultMap.recommendFaq,
     gameList: allGameMap.data
   }
+  if (resultMap.faq.isAllgames != 1){
+    if (resultMap.faq.faq_games) {
+      result.game = resultMap.faq.faq_games[0]
+    }
+  } else {
+    const game = {}
+    game.name = "适用全部"
+    game.id = result.gameList[0].id
+    result.game = game
+  }
   await ctx.render('pc/faqDetail', result)
 }
 
@@ -66,7 +81,7 @@ indexCtrl.faqLike = async (ctx, next) => {
   params.id = id
   const resultMap = await httpService.request(ctx, 'POST', url , params)
 
-  ctx.body = resultMap;
+  ctx.body = resultMap
 }
 
 
@@ -76,9 +91,42 @@ indexCtrl.gameCategory = async (ctx, next) => {
   const categoryId = ctx.params.categoryId
   const url = `${faqApiUrl}/api/open/faq/gameCategory/${gameId}/${categoryId}`
 
-  console.log(result)
 
   await ctx.render('pc/game_category', result)
 }
 
+indexCtrl.feedback = async (ctx, next) => {
+  const faqid = ctx.params.faqid
+  var url = `${faqApiUrl}/api/open/faq/allGame`
+  const allGameMap = await httpService.request(ctx, 'GET', url)
+  url = `${faqApiUrl}/api/open/faq/allCategoryFaq`
+  const categoryFaqMap = await httpService.request(ctx, 'GET', url)
+  url = `${faqApiUrl}/api/open/faq/${faqid}`
+  const faqMap = await httpService.request(ctx, 'GET', url)
+
+  var result = {
+    page: config.page,
+    categoryFaqList: categoryFaqMap.data,
+    gameList: allGameMap.data,
+    faq: faqMap.faq
+  }
+
+  if (faqMap.faq.isAllgames != 1){
+    if (faqMap.faq.faq_games) {
+      result.game = faqMap.faq.faq_games[0]
+    }
+  } else {
+    result.game = result.gameList[0]
+  }
+
+  await ctx.render('pc/feedback', result)
+}
+
+
+indexCtrl.postFeedback =  async (ctx, next) => {
+  const data = ctx.request.body
+  var url = `${faqApiUrl}/api/open/faq/userSuggest`
+  const resultMap = await httpService.request(ctx, 'POST', url, data)
+  ctx.body = resultMap
+}
 export default indexCtrl

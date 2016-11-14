@@ -1,0 +1,116 @@
+{% extends "./layout.html" %}
+{% block title %}{{faq.asked}} {{ page.title }}{% endblock %}
+{% block keywords %}{{ page.keywords }}{% endblock %}
+{% block description %}{{ page.description }}{% endblock %}
+
+{% block content %}
+<div class="index-one feedpack">
+       <section class="w-secWidth">
+           <div class="w-secBar w-overflow">
+               <div class="hot-item w-overflow">
+                   <span class="hotgame w-writter-size"> 问题反馈</span>
+                   <!-- 分割线 -->
+                   <span id="w-secbar-line-all">
+                   <!-- <i class="w-line-blue"></i></span> -->
+                   <div class="hot-content">
+                       <ul class="w-feedpack w-overflow">
+                       <!-- 存在内容show -->
+                       <div class="w-user-form w-form">
+                           <div class="w-form-item">
+                               <div class="w-form-name">请选择游戏产品：</div>
+                               <div class="w-form-cout" id="title">
+                                   <div class="dropdown" id="gameSelect">
+                                       <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                           <label id="selectLabel" gameId={{game.id}}> {{game.name}}</label>
+                                           <span class="caret"></span>
+                                       </button>
+                                       <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                                         {% for item in gameList %}
+                                           <li><a href="#" gameId='{{ item.id }}'>{{ item.name }}</a></li>
+                                         {% endfor %}
+                                       </ul>
+                                   </div>
+                               </div>
+                           </div>
+                           <div class="w-form-item">
+                               <div class="w-form-name">请选择问题分类：</div>
+                               <div class="w-form-cout" id="title">
+                                   <div class="dropdown" id="categoryFaqDiv">
+                                       <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                          <label id="selectcategoryFaq" categoryFaqId={{faq.categoryFaq.id}}>{{faq.categoryFaq.name}}</label>
+                                           <span class="caret"></span>
+                                       </button>
+                                       <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                                         {% for item in categoryFaqList %}
+                                           <li><a href="#" categoryFaqId={{item.id}}>{{ item.name }}</a></li>
+                                         {% endfor %}
+                                       </ul>
+                                   </div>
+                               </div>
+                           </div>
+                           <div class="w-form-item">
+                               <div class="w-form-name">填写反馈意见：</div>
+                               <div class="w-form-cont cont" id="cont">
+                                   <div class="w-textarea">
+                                       <div class="">
+                                           <textarea name="textarea" id="textarea" type="text" style="width: 900px;height: 200px;"></textarea>
+                                       </div>
+                                   </div>
+                               </div>
+                           </div>
+                             <div class="w-form-item btn-set">
+                               <input type="submit" class="btn" onclick="postFeedback()">
+                           </div>
+                       </div>
+                       <!-- 不存在内容提示 -->
+                       <!-- <div class="w-form-tishi">
+                          <span>
+                             没有与’“相关<br/>
+                       </span> 没有您想要的内容？试试    <a href="">问题反馈</a> </a>
+                       </div> -->
+                               </ul>
+                           </div>
+                       </ul>
+
+                   </div>
+               </div>
+       </section>
+       </div>
+{% endblock %}
+
+
+{% block afterScript %}
+ <script type="text/javascript">
+  var select = $("#gameSelect");
+  var bt = $("#selectLabel");
+  select.find("li").click(function(){
+    var linka = $(this).find("a")
+    bt.text(linka.text());
+    bt.attr("gameId", linka.attr("gameId"));
+  })
+  var categoryFaqDiv= $("#categoryFaqDiv");
+  var btCf = $("#selectcategoryFaq");
+  categoryFaqDiv.find("li").click(function(){
+    var linka = $(this).find("a")
+    btCf.text(linka.text());
+    btCf.attr("categoryFaqId", linka.attr("categoryFaqId"));
+  })
+
+  function postFeedback () {
+    var gameId = $("#selectLabel").attr("gameId");
+    var categoryFaqId = $("#selectcategoryFaq").attr("categoryFaqId");
+    var suggest = $("#textarea").val();
+    var url = "/post/feedback";
+    var data = {};
+    data.gameId = gameId;
+    data.categoryFaqId = categoryFaqId;
+    data.suggest = suggest;
+    $.post(url, data, function (result) {
+      if (result.code <= 0) {  alert(result.message); return }
+      alert("提交成功~感谢您的问题反馈~")
+      console.log(result);
+    })
+  }
+
+ </script>
+{% endblock %}

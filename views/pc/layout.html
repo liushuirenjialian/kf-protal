@@ -24,7 +24,7 @@
         </div>
       </header>
 
-      <div class="page-content" style="min-height:680px;"> 
+      <div class="page-content" style="min-height:680px;">
       {% block content %}
 
       {% endblock %}
@@ -39,6 +39,23 @@
       {% block afterScript %}
 
       {% endblock %}
+      <script type="text/javascript">
+       var select = $("#select");
+       var bt = $("#selectLabel");
+       select.find("li").click(function(){
+         var linka = $(this).find("a");
+         bt.text(linka.text()).attr("gameId", linka.attr("gameId"));
+       })
+       function searchByGame () {
+         var text = $(".sosu").find("input[type=text]").val();
+         var gameId = bt.attr("gameId")
+         if (text) {
+           window.location = '/' + gameId + '?q=' +text
+         } else {
+           window.location = '/' + gameId
+         }
+       }
+      </script>
   </body>
   </html>
 </html>

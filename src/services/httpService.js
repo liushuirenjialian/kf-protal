@@ -22,11 +22,11 @@ httpService.request = async (ctx, _method, _url, data) => {
       if (cookies !== undefined) {
         ctx.set('set-cookie', cookies)
       }
+      const res = JSON.parse(body)
       if (!error && response.statusCode === 200) {
-        const res = JSON.parse(body)
         resolve(res)
       } else {
-        reject(error)
+        resolve(res)
       }
     })
   })
