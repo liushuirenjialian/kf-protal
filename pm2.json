@@ -2,7 +2,6 @@
   "apps": [{
     "name": "koa2-startkit",
     "script": "bin/production.js",
-    // "cwd": "/absolute/path/to/project",
     "exec_mode": "cluster",
     "instances": 0,
     "max_memory_restart": "1G",

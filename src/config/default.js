@@ -16,7 +16,7 @@ export default {
     username: '',
     password: ''
   },
-  apiUrl: testApi,
+  apiUrl: onlineApi,
   onlineApi: onlineApi,
   page: {
     title: '胡莱客服官网',
