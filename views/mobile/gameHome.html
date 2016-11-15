@@ -19,8 +19,8 @@
     </div>
     <div class="search">
        <form class="search-0">
-        <input type="text" class="search-1" placeholder="输入关键字搜索">
-        <img class="search-2" src="/static/mobile/img/fangdajing.png" alt="">
+        <input type="text" class="search-1" placeholder="输入关键字搜索" onkeypress="if(event.keyCode==13) {searchByGame();return false;}">
+        <img class="search-2" src="/static/mobile/img/fangdajing.png" alt="" onclick="searchByGame()">
         </form>
     </div>
     <div class="wenti">
@@ -45,4 +45,17 @@
             <li class="footer-3"></li>
         </ul>
     </div>
+{% endblock %}
+{% block afterScript %}
+ <script type="text/javascript">
+ function searchByGame () {
+   var text = $(".search-1").val();
+   var gameId = {{game.id}};
+   if (text) {
+     window.location = '/' + gameId + '/search/' +text
+   } else {
+     window.location = '/' + gameId
+   }
+ }
+ </script>
 {% endblock %}

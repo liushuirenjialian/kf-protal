@@ -56,6 +56,15 @@ indexCtrl.feedback = async (ctx, next) => {
   }
 }
 
+indexCtrl.gameSearch =  async (ctx, next) => {
+  const userAgent = ctx.headers['user-agent']
+  var mobile = isMobile(userAgent).any
+  if (mobile) {
+    await indexMobileCtrl.gameSearch(ctx, next)
+  } else {
+    await indexMobileCtrl.gameSearch(ctx, next)
+  }
+}
 
 indexCtrl.faqLike = async (ctx, next) => {
   const id = ctx.params.id

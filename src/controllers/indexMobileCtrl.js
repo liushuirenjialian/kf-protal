@@ -2,9 +2,9 @@ var isMobile = require('ismobilejs')
 import httpService from '../services/httpService'
 import config from '../config'
 const faqApiUrl = config.apiUrl
-var indexMoblieCtrl = {}
+var indexMobileCtrl = {}
 
-indexMoblieCtrl.home = async (ctx, next) => {
+indexMobileCtrl.home = async (ctx, next) => {
   const url = `${faqApiUrl}/api/open/faq/allGame`
   const allGameMap = await httpService.request(ctx, 'GET', url)
 
@@ -15,7 +15,7 @@ indexMoblieCtrl.home = async (ctx, next) => {
   await ctx.render('mobile/index', result)
 }
 
-indexMoblieCtrl.gameHome = async (ctx, next) => {
+indexMobileCtrl.gameHome = async (ctx, next) => {
   const gameId = ctx.params.gameId
   // 包含查询
   var url = `${faqApiUrl}/api/open/faq/gameHome/${gameId}`
@@ -30,7 +30,7 @@ indexMoblieCtrl.gameHome = async (ctx, next) => {
   await ctx.render('mobile/gameHome', result)
 }
 
-indexMoblieCtrl.gameCategory = async (ctx, next) => {
+indexMobileCtrl.gameCategory = async (ctx, next) => {
   const gameId = ctx.params.gameId
   const categoryId = ctx.params.categoryId
   const query = ctx.query
@@ -66,7 +66,7 @@ indexMoblieCtrl.gameCategory = async (ctx, next) => {
 }
 
 
-indexMoblieCtrl.faqDetail = async (ctx, next) => {
+indexMobileCtrl.faqDetail = async (ctx, next) => {
   const id = ctx.params.id
   const url = `${faqApiUrl}/api/open/faq/faqDetail/${id}`
   const resultMap = await httpService.request(ctx, 'get', url)
@@ -92,7 +92,7 @@ indexMoblieCtrl.faqDetail = async (ctx, next) => {
 }
 
 
-indexMoblieCtrl.feedback = async (ctx, next) => {
+indexMobileCtrl.feedback = async (ctx, next) => {
   const faqid = ctx.params.faqid
   var url = `${faqApiUrl}/api/open/faq/allGame`
   const allGameMap = await httpService.request(ctx, 'GET', url)
@@ -119,4 +119,23 @@ indexMoblieCtrl.feedback = async (ctx, next) => {
   await ctx.render('mobile/feedback', result)
 }
 
-export default indexMoblieCtrl
+indexMobileCtrl.gameSearch = async (ctx, next) => {
+  const gameId = ctx.params.gameId
+  const query = ctx.params.search
+  var url = `${faqApiUrl}/api/open/faq/gameSearch/${gameId}/${query}`
+  console.log(url)
+  const resultMap = await httpService.request(ctx, 'GET', url)
+
+  var result = {
+    page: config.page,
+    game: resultMap.game,
+    query: query,
+    categoryQueryList: resultMap.categoryQueryList,
+    total: Number(resultMap.total),
+    totalPages: Number(resultMap.totalPages)
+  }
+
+  await ctx.render('mobile/gameSearch', result)
+}
+
+export default indexMobileCtrl
