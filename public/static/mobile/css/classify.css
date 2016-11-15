@@ -1,0 +1,163 @@
+body{
+	background-color: #f6f6f6;
+	font-family: 微软雅黑;
+	color: #696969;
+}
+.banner{
+	color: #fff;
+	height: 90px;
+	background-color: #65a3dd;
+}
+.banner .banner-1{
+	float: left;
+	line-height: 90px;
+	margin-left: 20px;
+	padding-top: 13px;
+}
+.banner .banner-2{
+	float: left;
+	font-size: 36px;
+	padding-top: 30px;
+	margin-left: 208px;
+}
+.banner .banner-3{
+	width: 40px;height: 40px;
+	float: right;
+	margin-right: 23px;
+	line-height: 90px;
+	margin-top: 14px;
+}
+.search{
+	padding-top: 30px;
+	padding-bottom: 30px;
+}
+.search-0{
+	width: 550px;
+	height: 64px;
+	line-height: 150px;
+	background-image: url(../img/yuan.png); 
+	background-repeat: no-repeat;
+	margin: 0 auto;
+}
+.search-1{
+	width: 450px;
+	height: 45px;
+	margin-top: 9px;
+	float: left;
+	margin-left: 20px;
+}
+.search-2{
+	margin-right: 20px;
+	margin-top: 10px;
+	float: right;
+	width: 40px;
+	height: 40px;
+}
+ ::-webkit-input-placeholder {
+           font-size: 18px;
+}
+:-moz-placeholder {/* Firefox 18- */
+	font-size: 18px;
+ }
+                
+::-moz-placeholder{/* Firefox 19+ */
+	font-size: 18px;
+}
+
+:-ms-input-placeholder {
+   font-size: 18px;
+}
+
+.wenti{
+	height: 70px;
+}
+.wenti p{
+	color: #65a3dd;
+	width: 580px;
+	margin: 0 auto;
+	line-height: 70px;
+	font-size: 24px;
+}
+
+.all{
+	background-color: #fff;
+	height: 680px;
+}
+.all a{
+	text-align: center;
+	margin: 0 auto;
+}
+.all p{
+	font-size: 24px;
+	
+	line-height: 60px;
+	
+}
+.shang{
+	padding-top: 50px;
+	width: 555px;
+	height: 60px;
+	margin-left: 36px;
+}
+.shang-1{
+	float: left;
+	width: 260px;
+	height: 60px;
+	background-image: url(../img/tuoyuan.png);
+}
+.shang-2{
+	float: right;
+	width: 260px;
+	height: 60px;
+	background-image: url(../img/tuoyuan.png);
+}
+.xia{
+	padding-top: 30px;
+	width: 555px;
+	height: 60px;
+	margin-left: 36px;
+}
+.xia-1{
+	float: left;
+	width: 260px;
+	height: 60px;
+	background-image: url(../img/tuoyuan.png);
+}
+.xia-2{
+	float: right;
+	width: 260px;
+	height: 60px;
+	background-image: url(../img/tuoyuan.png);
+}
+
+.down{
+	width: 640px;
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	margin-top: 15px;
+	height: 100px;
+	background-color: #fff;
+}
+.footer{
+	height: 100px;
+	width: 580px;
+	margin: 0 auto;
+}
+.footer li{
+	width: 80px;
+	height: 70px;
+	float: left;
+	margin-top: 15px;
+}
+.footer-1{
+	background-image: url(../img/1.png);
+}
+.footer-2{
+	background-image: url(../img/2.png);
+	margin-left: 170px;
+	margin-right: 170px;
+}
+.footer-3{
+	background-image: url(../img/3.png);
+}

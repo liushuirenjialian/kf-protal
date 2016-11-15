@@ -1,37 +1,26 @@
-{% extends "layouts/layout.html" %}
+{% extends "./layout.html" %}
 
-{% block header %}koa2-template{% endblock %}
+{% block title %}{{ page.title }}{% endblock %}
+{% block keywords %}{{ page.keywords }}{% endblock %}
+{% block description %}{{ page.description }}{% endblock %}
+
+
+{% block css %}
+<link rel="stylesheet" type="text/css" href="/static/mobile/css/index.css">
+{% endblock %}
 
 {% block content %}
-    <div class="">
-      <p>
-        这是移动端
-      </p>
-      <p>
-        {{ title }}
-      </p>
-      <ul>
-        {% for item in bannerList %}
-        <li><a href="#">{{ item.title }}</a> {{ item.imgurl }}</li>
-        {% endfor %}
-      </ul>
-      <ul>
-        {% for item in productList %}
-        <li><a href="#">{{ item.proname }}</a> {{ item.imgurl }}</li>
-        {% endfor %}
-      </ul>
-      <ul>
-        {% for item in FriendlyList %}
-        <li><a href="#">{{ item.friendname }}</a> {{ item.imgurl }}</li>
-        {% endfor %}
-      </ul>
-      <h1>
-        userAgent:
-        {{userAgent}}
-      </h1>
-      <h1>
-        是否浏览器：
-        {{isMobile}}
-      </h1>
-    </div>
+<div class="wrap">
+     <div class="banner">
+         <img src="/static/mobile/img/banner.png" alt="">
+         <p>选择游戏</p>
+     </div>
+     <p class="asd">请选择游戏产品</p>
+     <ul class="gamelist">
+         {% for item in gameList %}
+            <li class="gamename"><a href="/{{item.id}}"><p>{{ item.name }}</p></a> <img src="/static/mobile/img/sanjiao.png" alt="{{ item.name }}"></li>
+         {% endfor %}
+     </ul>
+
+ </div>
 {% endblock %}

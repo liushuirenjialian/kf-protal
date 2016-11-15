@@ -1,0 +1,73 @@
+body{
+	background-color: #f6f6f6;
+}
+.banner{
+	color: #fff;
+	height: 90px;
+	background-color: #65a3dd;
+	margin-bottom: 10px;
+}
+.banner a{
+	float: left;
+	line-height: 90px;
+	margin-left: 20px;
+	padding-top: 13px;
+}
+.banner p{
+	float: right;
+	font-size: 36px;
+	padding-top: 30px;
+	margin-right: 238px;
+	/*margin: 0 auto;*/
+}
+
+
+.tip{
+	width: 580px;
+	margin: 0 auto;
+	height: 105px;
+	background-color: #f6f6f6;
+}
+.tip p{
+	font-size: 30px;
+	/*color: #f6987b;*/
+	line-height: 105px;
+	text-align: center;
+}
+.wrap .tip span{
+	color: #65a3dd;
+}
+
+.gamelist li{
+	font-size: 22px;
+	height: 90px;
+	width:640px;
+	line-height: 90px;
+	background-color: #fff;
+	font-size: 30px;
+	margin-bottom: 10px;
+}
+.gamelist a{
+	width: 590px;
+	margin-left: 30px;
+	display: inline-block;
+	
+}
+.gamelist p{
+	display: inline-block;
+	float: left;
+	width: 540px;
+	max-width: 540px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.gamelist img{
+	display: inline-block;
+	width: 18px;
+	height: 32px;
+	float: right;
+	margin-right: 30px;
+	margin-top: 30px;
+	text-align: center;
+}
