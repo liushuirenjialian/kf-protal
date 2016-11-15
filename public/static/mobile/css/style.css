@@ -1,0 +1,38 @@
+/*= reset begin*/
+
+body,
+div,
+p,
+img,
+a ,
+select,
+option,
+input ,
+label {
+    padding: 0;
+    margin: 0;
+}
+
+ul,
+li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+img {
+    border: none;
+    display: inline-block;
+}
+
+a {
+	/*display: inline-block;*/
+    text-decoration: none;
+    /*text-indent: -99999px;*/
+    color: #000;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+

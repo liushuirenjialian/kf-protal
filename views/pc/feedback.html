@@ -97,9 +97,12 @@
   })
 
   function postFeedback () {
+    var isPost = localStorage['userSuggest' + faq_id];
+    if (isPost) { alert("这个FAQ您已经反馈过问题了噢~~"); return; }
     var gameId = $("#selectLabel").attr("gameId");
     var categoryFaqId = $("#selectcategoryFaq").attr("categoryFaqId");
     var suggest = $("#textarea").val();
+    if (suggest.length<10) { alert("填写内容不能少于10个字,谢谢~"); return; }
     var url = "/post/feedback";
     var data = {};
     data.gameId = gameId;
@@ -108,6 +111,7 @@
     $.post(url, data, function (result) {
       if (result.code <= 0) {  alert(result.message); return }
       alert("提交成功~感谢您的问题反馈~")
+      localStorage['userSuggest' + faq_id] = true;
       console.log(result);
     })
   }

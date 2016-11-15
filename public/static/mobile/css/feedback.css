@@ -1,0 +1,70 @@
+
+body{
+	background-color: #f6f6f6;
+}
+.banner{
+	color: #fff;
+	height: 90px;
+	background-color: #65a3dd;
+}
+.banner a{
+	float: left;
+	line-height: 90px;
+	margin-left: 20px;
+	padding-top: 3px;
+}
+.banner p{
+	float: right;
+	font-size: 36px;
+	padding-top: 30px;
+	margin-right: 208px;
+}
+.wenti p{
+	padding-top: 80px;
+	font-size: 28px;
+}
+.wrap{
+	width: 580px;
+	margin: 0 auto;
+	color: #000;
+}
+.leibie{
+	height: 110px;
+	margin-top: 80px;
+}
+.leibie p{
+	font-size: 28px;
+}
+.wrap .leibie-1{
+	color: #000;
+	width: 530px;
+}
+.wrap .leibie-2{
+	display: inline-block;
+	width: 50px;
+}
+.wrap .row .caidan{
+	width: 503px;
+}
+
+.yijian p{
+	font-size: 28px;
+	height: 64px;
+	line-height: 65px;
+}
+.wrap .yijian-2{
+	display: inline-block;
+	width: 580px;
+	height: 270px;
+}
+.wrap .tijiao{
+	width: 580px;
+	height: 60px;
+	margin-top: 32px;
+	background-color: #f6987b;
+	font-size: 28px;
+	color: #fff;
+	border-radius: 6px;
+	border-left:0px;border-top:0px;border-right:0px;border-bottom:0px;
+
+}

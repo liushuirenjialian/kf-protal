@@ -1,0 +1,87 @@
+{% extends "./layout.html" %}
+
+{% block title %}{{ page.title }}{% endblock %}
+{% block keywords %}{{ page.keywords }}{% endblock %}
+{% block description %}{{ page.description }}{% endblock %}
+
+
+{% block css %}
+<link rel="stylesheet" type="text/css" href="/static/mobile/css/feedback.css">
+{% endblock %}
+
+{% block afterHead %}
+<link rel="stylesheet" href="/static/bootstrap/bootstrap.min.css">
+<link rel="stylesheet" href="/static/bootstrap/bootstrap-theme.min.css">
+<script src="/static/bootstrap/bootstrap.min.js"></script>
+{% endblock %}
+
+{% block content %}
+    <div class="banner">
+            <a href="/detail/{{faq.id}}"><img src="/static/mobile/img/banner.png" alt=""></a>
+            <p>{{game.name}}</p>
+    </div>
+
+    <div class="wrap">
+       <div class="wenti">
+        <p>选择需要反馈的问题类别：</p>
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="input-group">
+               <!-- <input class="form-control caidan" aria-label="Text input with dropdown button"> -->
+               <div class="input-group-btn" id="categoryFaqDiv">
+                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <label id="selectcategoryFaq" categoryFaqId={{faq.categoryFaq.id}}>{{faq.categoryFaq.name}}</label>
+                <span class="caret"></span></button>
+                <ul class="dropdown-menu">
+                  {% for item in categoryFaqList %}
+                      <li><a href="#" categoryFaqId={{item.id}}>{{ item.name }}</a></li>
+                  {% endfor %}
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+
+        <div class="yijian">
+            <p class="yijian-1">填写反馈意见</p>
+            <textarea class="yijian-2" id="textarea" type="text"></textarea>
+            <!-- <input class="yijian-2" type="text"> -->
+        </div>
+        <input class="tijiao" type="button" value="提交反馈" onclick="postFeedback()">
+    </div>
+{% endblock %}
+
+{% block afterScript %}
+ <script type="text/javascript">
+ var faq_id = {{faq.id}};
+ var categoryFaqDiv= $("#categoryFaqDiv");
+ var btCf = $("#selectcategoryFaq");
+ categoryFaqDiv.find("li").click(function(){
+   var linka = $(this).find("a")
+   btCf.text(linka.text());
+   btCf.attr("categoryFaqId", linka.attr("categoryFaqId"));
+ })
+
+ function postFeedback () {
+   var isPost = localStorage['userSuggest' + faq_id];
+   if (isPost) { alert("这个FAQ您已经反馈过问题了噢~~"); return; }
+   var gameId = {{game.id}};
+   var categoryFaqId = btCf.attr("categoryFaqId");
+   var suggest = $("#textarea").val();
+   if (suggest.length<10) { alert("填写内容不能少于10个字,谢谢~"); return; }
+   var url = "/post/feedback";
+   var data = {};
+   data.gameId = gameId;
+   data.categoryFaqId = categoryFaqId;
+   data.suggest = suggest;
+   $.post(url, data, function (result) {
+     if (result.code <= 0) {  alert(result.message); return }
+     alert("提交成功~感谢您的问题反馈~")
+     localStorage['userSuggest' + faq_id] = true;
+     console.log(result);
+   })
+ }
+
+ </script>
+{% endblock %}

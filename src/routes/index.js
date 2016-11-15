@@ -21,6 +21,9 @@ router.get('/feedback/:faqid', indexCtrl.feedback)
 // 游戏分类的首页
 router.get('/:gameId/:categoryId', indexCtrl.gameCategory)
 
+// 游戏查询
+router.get('/:gameId/search/:search', indexCtrl.gameSearch)
+
 
 
 // 游戏分类首页的查询，先用ajax查询吧

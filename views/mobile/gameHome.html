@@ -1,0 +1,61 @@
+{% extends "./layout.html" %}
+
+{% block title %}{{ page.title }}{% endblock %}
+{% block keywords %}{{ page.keywords }}{% endblock %}
+{% block description %}{{ page.description }}{% endblock %}
+
+
+{% block css %}
+<link rel="stylesheet" type="text/css" href="/static/mobile/css/classify.css">
+{% endblock %}
+
+{% block content %}
+<div class="banner">
+            <div class="banner">
+            <a class="banner-1" href="/"><img src="/static/mobile/img/banner.png" alt=""></a>
+            <p class="banner-2">{{game.name}}</p>
+            <!-- <a class="banner-3" href="/feedback/{{game.id}}"><img src="/static/mobile/img/jiantou.png" alt=""></a> -->
+    </div>
+    </div>
+    <div class="search">
+       <form class="search-0">
+        <input type="text" class="search-1" placeholder="输入关键字搜索" onkeypress="if(event.keyCode==13) {searchByGame();return false;}">
+        <img class="search-2" src="/static/mobile/img/fangdajing.png" alt="" onclick="searchByGame()">
+        </form>
+    </div>
+    <div class="wenti">
+        <p>按问题类别查找</p>
+    </div>
+    <!-- <div class="all">
+        <div class="shang">
+        <div class="shang-1"><a href="number.html"><p>账号及充值</p></a></div>
+        <div class="shang-2"><a href="number.html"><p>游戏玩法攻略</p></a></div>
+    </div> -->
+    <div class="xia">
+        {% for item in categoryQueryList %}
+          <div class="xia-2"><a href="/{{game.id}}/{{item.categoryFaq.id}}"><p>{{item.categoryFaq.name}}</p></a></div>
+        {% endfor %}
+    </div>
+    </div>
+
+    <div class="down">
+        <ul class="footer">
+            <li class="footer-1"></li>
+            <li class="footer-2"></li>
+            <li class="footer-3"></li>
+        </ul>
+    </div>
+{% endblock %}
+{% block afterScript %}
+ <script type="text/javascript">
+ function searchByGame () {
+   var text = $(".search-1").val();
+   var gameId = {{game.id}};
+   if (text) {
+     window.location = '/' + gameId + '/search/' +text
+   } else {
+     window.location = '/' + gameId
+   }
+ }
+ </script>
+{% endblock %}

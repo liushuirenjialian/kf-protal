@@ -1,0 +1,71 @@
+{% extends "./layout.html" %}
+
+{% block title %}{{ page.title }}{% endblock %}
+{% block keywords %}{{ page.keywords }}{% endblock %}
+{% block description %}{{ page.description }}{% endblock %}
+
+
+{% block css %}
+<link rel="stylesheet" type="text/css" href="/static/mobile/css/detail.css">
+{% endblock %}
+
+{% block content %}
+      <div class="banner">
+           <a href="/{{game.id}}/{{faq.categoryFaq.id}}"class="banner-1"><img src="/static/mobile/img/banner.png" alt=""></a>
+           <p class="banner-2">问题详情</p>
+           <a class="banner-3" href="/"><img src="/static/mobile/img/shouye.png" alt=""></a>
+       </div>
+        <div class="question">
+                <p class="question-1">Q: {{faq.asked}}</p>
+                <div class="content">
+                    <p class="content-1">
+                        {{faq.questions}}
+                    </p>
+                    <div class="content-2">
+                        <div class="content-2-1"></div>
+                        <span>{{faq.likes}}</span>
+                        <p>人觉得有用</p>
+                    </div>
+                </div>
+            </div>
+            <div class="xiangguan">
+                <p class="xiangguan-1">相关问题：</p>
+                <ul class="xiangguan-2">
+                  {% for item in recommendFaq %}
+                    <li><a href="/detail/{{item.id}}">{{item.asked}}</a></li>
+                   {% endfor %}
+                </ul>
+            </div>
+            <div class="down">
+                <ul class="footer">
+                    <li class="footer-1"></li>
+                    <a href="/feedback/{{faq.id}}"><li class="footer-2"></li></a>
+                    <li class="footer-3"></li>
+                </ul>
+            </div>
+{% endblock %}
+
+{% block afterScript %}
+ <script type="text/javascript">
+   var faq_id = {{faq.id}};
+   function iLikes () {
+     var isLike = localStorage[faq_id];
+     if (isLike) { alert("您已经赞过了噢~"); return; }
+     var url = "/post/like/" + faq_id;
+     $.post(url,function(result){
+       $(".content-2 span").text(result.data.likes);
+       localStorage[faq_id] = true;
+       $('div.content-2-1').css('background-image','url(/static/mobile/img/xing2.png)');
+     })
+   }
+
+   $('div.content-2-1').click(function() {
+         iLikes();
+    });
+
+   var ls = localStorage[faq_id];
+   if (ls) {
+      $('div.content-2-1').css('background-image','url(/static/mobile/img/xing2.png)');
+   }
+ </script>
+{% endblock %}
