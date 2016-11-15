@@ -9,10 +9,10 @@
        <section class="w-secWidth">
            <div class="w-secBar clearfix">
                <div class="hot-item clearfix">
-                   <span class="hotgame w-writter-size"> <a href="/{{game.id}}">{{game.name}} </a>- {{faq.categoryFaq.name}}</span>
+                   <span class="hotgame w-writter-size">{{game.name}} </a>- {{faq.categoryFaq.name}}</span>
                    <div class="sosu">
                      <input type="text" placeholder="请输入问题关键字" onkeypress="if(event.keyCode==13) {searchByGame();return false;}">
-                     <span class="search w-Sear" onclick="searchByGame()"></span></div>
+                     <span class="search w-Sear" onclick="searchByGame()">搜 索</span></div>
                    <div class="dropdown" id="select">
                        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                          <label id="selectLabel" gameId='{{game.id}}'>{{ game.name}}</label>

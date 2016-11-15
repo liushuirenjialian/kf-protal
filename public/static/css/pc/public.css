@@ -1,8 +1,11 @@
+
 .w-secBar {
-    margin-top: 45px;
+    margin-top: 40px;
     // min-height: 700px;
 }
-
+.w-fankuiqq{
+        margin-bottom: 10px;
+}
 textarea#textarea {
     padding: 8px;
     border: 1px solid #ABABAB;
@@ -14,7 +17,7 @@ textarea#textarea {
 .btn {
     background-color: rgba(219, 127, 76, 1);
     width: 94px;
-    height: 36px;
+    height: 38px;
     line-height: 35px;
     display: inline-block;
     color: #fff;

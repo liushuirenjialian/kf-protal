@@ -23,9 +23,11 @@ header.w-secheader {
 }
 
 a.logo {
-    background: url(../images/KF_logo.png) no-repeat !important;
-    width: 287px;
-    height: 75px;
+    margin: 16px 0;
+    background: url(../images/logo.png) no-repeat !important;
+    // background-size: contain;
+    width: 181px;
+    height: 49px;
     text-indent: -9999px;
     // margin-left: 400px;
 }
