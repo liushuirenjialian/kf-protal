@@ -4,10 +4,10 @@
 {% block keywords %}{{ page.keywords }}{% endblock %}
 {% block description %}{{ page.description }}{% endblock %}
 
-
 {% block css %}
-<link rel="stylesheet" type="text/css" href="/static/mobile/css/feedback.css">
+   <link rel="stylesheet" type="text/css" href="/static/mobile/css/feedback.css">
 {% endblock %}
+ 
 
 {% block afterHead %}
 <link rel="stylesheet" href="/static/bootstrap/bootstrap.min.css">
@@ -29,12 +29,12 @@
             <div class="input-group">
                <!-- <input class="form-control caidan" aria-label="Text input with dropdown button"> -->
                <div class="input-group-btn" id="categoryFaqDiv">
-                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <button type="button" class="btn btn-default dropdown-toggle aiyou" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <label id="selectcategoryFaq" categoryFaqId={{faq.categoryFaq.id}}>{{faq.categoryFaq.name}}</label>
                 <span class="caret"></span></button>
-                <ul class="dropdown-menu">
+                <ul class="dropdown-menu aiyou">
                   {% for item in categoryFaqList %}
-                      <li><a href="#" categoryFaqId={{item.id}}>{{ item.name }}</a></li>
+                      <li><a class="last"href="#" categoryFaqId={{item.id}}>{{ item.name }}</a></li>
                   {% endfor %}
                 </ul>
               </div>

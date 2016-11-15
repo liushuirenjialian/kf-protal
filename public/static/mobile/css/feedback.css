@@ -1,6 +1,6 @@
 
 body{
-	background-color: #f6f6f6;
+	background-color: #f6f6f6 !important;
 }
 .banner{
 	color: #fff;
@@ -14,10 +14,17 @@ body{
 	padding-top: 3px;
 }
 .banner p{
+	width: 590px;
+	margin: 0 auto;
+	text-align: center;
 	float: right;
 	font-size: 36px;
 	padding-top: 30px;
-	margin-right: 208px;
+	/*margin-right: 208px;*/
+}
+
+.last{
+	font-size: 24px;
 }
 .wenti p{
 	padding-top: 80px;
@@ -43,10 +50,17 @@ body{
 	display: inline-block;
 	width: 50px;
 }
+.btn{
+	font-size: 24px !important;
+}
 .wrap .row .caidan{
 	width: 503px;
 }
 
+.aiyou{
+	width: 200px;
+	font-size: 24px;
+}
 .yijian p{
 	font-size: 28px;
 	height: 64px;

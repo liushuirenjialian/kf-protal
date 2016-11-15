@@ -49,6 +49,7 @@ body{
 	display: inline-block;
 }
 .gamename a{
+	width: 600px;
 	color: #000;
 	display: inline-block;
 	margin-left: 15px;

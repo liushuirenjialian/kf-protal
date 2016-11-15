@@ -18,7 +18,7 @@
      <p class="asd">请选择游戏产品</p>
      <ul class="gamelist">
          {% for item in gameList %}
-            <li class="gamename"><a href="/{{item.id}}"><p>{{ item.name }}</p></a> <img src="/static/mobile/img/sanjiao.png" alt="{{ item.name }}"></li>
+            <li class="gamename"><a href="/{{item.id}}"><p>{{ item.name }}</p> <img src="/static/mobile/img/sanjiao.png" alt="{{ item.name }}"></a></li>
          {% endfor %}
      </ul>
 
