@@ -89,6 +89,8 @@ body{
 	font-size: 20px;
 	width: 580px;
 	margin: 0 auto;
+	min-height: 100px;
+	margin-bottom: 100px;
 }
 .xiangguan-2 li{
 	line-height: 50px;
@@ -114,7 +116,7 @@ body{
 	margin-top: 15px;
 }
 .footer-1{
-	background-image: url(../img/1.png);
+	/*background-image: url(../img/1.png);*/
 }
 .footer-2{
 	background-image: url(../img/2.png);
@@ -122,5 +124,5 @@ body{
 	margin-right: 170px;
 }
 .footer-3{
-	background-image: url(../img/3.png);
+	/*background-image: url(../img/3.png);*/
 }
