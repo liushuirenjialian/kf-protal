@@ -8,7 +8,7 @@
         <section class="w-secWidth">
             <div class="w-secBar clearfix">
                 <div class="hot-item clearfix">
-                    <span class="hotgame w-writter-size"><a href="/">首页</a> ><a style="padding-left:5px;" href="/{{game.id}}">{{ game.name}}</span>
+                    <span class="hotgame w-writter-size"><a href="/">首页</a> ><a style="padding-left:5px;" href="/{{game.id}}">{{ game.name}}</a></span>
                     <div class="sosu">
                         <input type="text" placeholder="请输入产品或问题" onkeypress="if(event.keyCode==13) {searchByGame();return false;}">
                         <span class="search w-Sear" onclick="searchByGame()">搜 索</span></div>
@@ -20,7 +20,7 @@
                         </button>
                         <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
                           {% for item in gameList %}
-                            <li><a href="#" gameId='{{item.id}}'>{{ item.name }}</a></li>
+                            <li><a href="javascript:;" gameId='{{item.id}}'>{{ item.name }}</a></li>
                           {% endfor %}
                         </ul>
                     </div>
