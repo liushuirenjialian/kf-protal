@@ -18,7 +18,7 @@ body{
 .banner .banner-2{
 	float: left;
 	font-size: 36px;
-	padding-top: 30px;
+	padding-top: 20px;
 	margin-left: 208px;
 }
 .banner .banner-3{
@@ -41,18 +41,21 @@ body{
 }
 .content{
 	background-color: #fff;
+	min-height: 350px;
 }
 .content-1{
+	min-height: 300px;
 	font-size: 24px;
 	width: 580px;
 	margin: 0 auto;
 	padding-top: 15px;
-	padding-bottom: 25px;
+	
 }
 .content-2 {
 	width: 235px;
 	height: 34px;
 	margin: 0 auto;
+	padding-bottom: 25px;
 }
 .content-2 .content-2-1{
 	width: 34px;
@@ -86,6 +89,8 @@ body{
 	font-size: 20px;
 	width: 580px;
 	margin: 0 auto;
+	min-height: 100px;
+	margin-bottom: 100px;
 }
 .xiangguan-2 li{
 	line-height: 50px;
@@ -111,7 +116,7 @@ body{
 	margin-top: 15px;
 }
 .footer-1{
-	background-image: url(../img/1.png);
+	/*background-image: url(../img/1.png);*/
 }
 .footer-2{
 	background-image: url(../img/2.png);
@@ -119,5 +124,5 @@ body{
 	margin-right: 170px;
 }
 .footer-3{
-	background-image: url(../img/3.png);
+	/*background-image: url(../img/3.png);*/
 }

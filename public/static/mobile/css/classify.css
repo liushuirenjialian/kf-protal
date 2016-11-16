@@ -17,7 +17,7 @@ body{
 .banner .banner-2{
 	float: left;
 	font-size: 36px;
-	padding-top: 30px;
+	padding-top: 20px;
 	margin-left: 208px;
 }
 .banner .banner-3{
@@ -40,6 +40,8 @@ body{
 	margin: 0 auto;
 }
 .search-1{
+	border: 0px;
+	font-size: 20px;
 	width: 450px;
 	height: 45px;
 	margin-top: 9px;
@@ -83,50 +85,24 @@ body{
 	background-color: #fff;
 	height: 680px;
 }
-.all a{
+ .xia-2 a{
 	text-align: center;
 	margin: 0 auto;
 }
-.all p{
-	font-size: 24px;
-	
-	line-height: 60px;
-	
-}
-.shang{
-	padding-top: 50px;
-	width: 555px;
-	height: 60px;
-	margin-left: 36px;
-}
-.shang-1{
-	float: left;
-	width: 260px;
-	height: 60px;
-	background-image: url(../img/tuoyuan.png);
-}
-.shang-2{
-	float: right;
-	width: 260px;
-	height: 60px;
-	background-image: url(../img/tuoyuan.png);
-}
+
 .xia{
-	padding-top: 30px;
+	
 	width: 555px;
 	height: 60px;
 	margin-left: 36px;
-}
-.xia-1{
-	float: left;
-	width: 260px;
-	height: 60px;
-	background-image: url(../img/tuoyuan.png);
 }
 .xia-2{
+	margin-top: 30px;
+	font-size: 24px;
 	float: right;
 	width: 260px;
 	height: 60px;
+	line-height: 60px;
 	background-image: url(../img/tuoyuan.png);
 }
 

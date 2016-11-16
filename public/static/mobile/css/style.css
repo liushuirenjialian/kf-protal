@@ -12,7 +12,9 @@ label {
     padding: 0;
     margin: 0;
 }
-
+input{
+    border: none;
+}
 ul,
 li {
     margin: 0;
@@ -33,6 +35,6 @@ a {
 }
 
 a:hover {
-    text-decoration: underline;
+    /*text-decoration: underline;*/
 }
 

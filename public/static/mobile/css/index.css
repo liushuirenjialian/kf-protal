@@ -15,7 +15,7 @@ body{
 .banner p{
 	float: right;
 	font-size: 36px;
-	padding-top: 30px;
+	padding-top: 20px;
 	margin-right: 248px;
 }
 .asd{
@@ -49,9 +49,10 @@ body{
 	display: inline-block;
 }
 .gamename a{
+	width: 600px;
 	color: #000;
 	display: inline-block;
-	margin-left: 15px;
+	margin-left: 30px;
 }
 .gamelist img{
 	display: inline-block;
