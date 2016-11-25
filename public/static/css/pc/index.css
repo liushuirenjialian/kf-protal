@@ -17,7 +17,7 @@ body {
 }
 
 .w-secWidth {
-    width: 1000px;
+    width: 1003px;
     min-height: 110px;
     margin: 0 auto;
 }
@@ -314,6 +314,7 @@ i.w-line-blue {
 
 .index-one .hot-content {
     margin-top: 27px;
+    border: 1px solid #E4DDDD;
 }
 
 .feedback ul.w-feedpack {
