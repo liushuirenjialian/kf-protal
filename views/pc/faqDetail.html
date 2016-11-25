@@ -38,7 +38,7 @@
                         </li>
                         <li class="w-faqcontact-assess w-allcolorfont">
                             <div><img src="/static/css/images/star.png" alt="对您有用就赞一下吧~" onclick="iLikes()"><span class="w-faqfaqcontact-num">{{faq.likes}}</span>人觉得有用</div>
-                            <div>没有您想要的内容?试试<a href="/feedback/{{faq.id}}">我要纠错</a></div>
+                            <div>内容有误 ? 试试<a href="/feedback/{{faq.id}}">我要纠错</a></div>
                         </li>
                     </ul>
                     <div class="w-faqcon-two clearfix faqguanlian">
@@ -77,7 +77,7 @@
 
   var ls = localStorage[faq_id];
   if (ls) {
-    $('.w-faqcontact-assess img').attr('src','/static/css/images/star_l.png');
+    $('.w-faqcontact-assess img').prop('src','/static/css/images/star_l.png');
   }
 
  </script>
