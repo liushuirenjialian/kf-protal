@@ -1,4 +1,8 @@
 .btn-default {
-	background-color: #ccc;
-	border-color: #ccc;
+	background-color: #eee;
+	border-color: #eee;
+}
+
+.kf-search {
+	width: 70%;
 }

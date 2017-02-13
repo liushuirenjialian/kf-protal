@@ -25,25 +25,21 @@
     </div>        
     </div>
     <div class="row">
-      <div class="search col-xs-10 col-xs-offset-1">
-       <form class="search-0">
-        <div class="row">
-          <div class="col-xs-8">
-            <div class="text-center">
-              <input type="text" class="search-1" placeholder="输入关键字搜索" onkeypress="if(event.keyCode==13) {searchByGame();return false;}">
-            </div>
+      <div class="col-xs-12 text-center">
+       <form class="form-horizontal">
+        <!-- <div class="row">
+          <div class="col-xs-8 text-center"> -->
+              <input type="text" id="search-1" class="form-control kf-search" placeholder="输入关键字搜索" style="display: inline-block;" onkeypress="if(event.keyCode==13) {searchByGame();return false;}">
+               <img class="search-2" src="/static/mobile/img/fangdajing.png" alt="" onclick="searchByGame()">
+          <!-- </div>
             
-          </div>
-          <div class="col-xs-4 text-center">
-             <img class="search-2" src="/static/mobile/img/fangdajing.png" alt="" onclick="searchByGame()">
-          </div>
-        </div>
+        </div> -->
         
         </form>
     </div>
     </div>
     <div class="row">
-        <div class="wenti col-xs-10 col-xs-offset-1">
+        <div class="wenti col-xs-12 text-center">
           <p>按问题类别查找</p>
         </div>
     </div>
@@ -66,7 +62,7 @@
 {% block afterScript %}
  <script type="text/javascript">
  function searchByGame () {
-   var text = $(".search-1").val();
+   var text = $("#search-1").val();
    var gameId = {{game.id}};
    if (text) {
      window.location = '/' + gameId + '/search/' +text
