@@ -1,26 +1,10 @@
 body{
 	background-color: #f6f6f6;
 }
-.banner{
-	color: #fff;
-	height: 90px;
-	background-color: #65a3dd;
-	margin-bottom: 10px;
-}
-.banner a{
-	float: left;
-	line-height: 90px;
-	margin-left: 20px;
-	padding-top: 13px;
-}
-.banner p{
-	float: right;
-	font-size: 36px;
-	padding-top: 20px;
-	margin-right: 238px;
-	/*margin: 0 auto;*/
-}
 
+.result{
+	font-size: 28px;
+}
 
 .tip{
 	width: 580px;
@@ -30,7 +14,6 @@ body{
 }
 .tip p{
 	font-size: 30px;
-	/*color: #f6987b;*/
 	line-height: 105px;
 	text-align: center;
 }
@@ -40,34 +23,31 @@ body{
 
 .gamelist li{
 	font-size: 22px;
-	height: 90px;
-	width:640px;
-	line-height: 90px;
-	background-color: #fff;
-	font-size: 30px;
-	margin-bottom: 10px;
-}
-.gamelist a{
-	width: 590px;
-	margin-left: 30px;
-	display: inline-block;
-	
+    background-color: #fff;
+    padding-top: 15px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    /*padding-bottom: 10px;*/
 }
 .gamelist p{
+	margin-left: 10px;
 	display: inline-block;
-	float: left;
-	width: 540px;
-	max-width: 540px;
+	 /*max-width: 280px;
     overflow: hidden;
     text-overflow: ellipsis;
-    white-space: nowrap;
+    white-space: nowrap;*/
+}
+.gamename a{
+	// width: 600px;
+	color: #000;
+	display: inline-block;
+	margin-left: 30px;
 }
 .gamelist img{
 	display: inline-block;
 	width: 18px;
 	height: 32px;
 	float: right;
-	margin-right: 30px;
-	margin-top: 30px;
-	text-align: center;
+	margin-right: 20px;
 }

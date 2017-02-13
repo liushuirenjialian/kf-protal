@@ -1,13 +1,16 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-CN">
   <head>
     <meta charset="UTF-8">
     <title>{% block title %}{% endblock %}</title>
-    <meta name="viewport" content="width=640,target-densitydpi=320, minimum-scale=0.5, maximum-scale=2,user-scalable=0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
     <meta name="keywords" content="{% block keywords %}{% endblock %}">
     <meta name="description" content="{% block description %}{% endblock %}">
     <link rel="icon" href="/static/css/images/favicon.png" type="image/vnd.microsoft.icon">
+    <link rel="stylesheet" href="/static/bootstrap/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="/static/mobile/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/static/mobile/css/bootstrap-theme-ljx.css">
     {% block css %}{% endblock %}
     <script src="/static/js/jquery-1.10.2.min.js" charset="utf-8"></script>
     {% block afterHead %}{% endblock %}

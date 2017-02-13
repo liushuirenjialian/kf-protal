@@ -10,14 +10,22 @@
 {% endblock %}
 
 {% block content %}
-      <div class="banner">
-           <a href="/{{game.id}}/{{faq.categoryFaq.id}}"class="banner-1"><img src="/static/mobile/img/banner.png" alt=""></a>
-           <p class="banner-2">问题详情</p>
-           <a class="banner-3" href="/"><img src="/static/mobile/img/shouye.png" alt=""></a>
-       </div>
-        <div class="question">
-                <p class="question-1">Q: {{faq.asked}}</p>
-                <div class="content">
+<div class="container-fulid">
+    <div class="banner row">
+      <div class="col-xs-2">
+        <a href="/{{game.id}}/{{faq.categoryFaq.id}}"class=""><img src="/static/mobile/img/banner.png" alt=""></a>
+      </div>
+      <div class="col-xs-8">
+        <div class="text-center"><p>问题详情</p></div>
+        
+      </div> 
+    </div>
+   
+        <div class="question row">
+          <div class="col-xs-12">
+            <p class="question-1">Q: {{faq.asked}}</p>
+          </div>
+          <div class="content col-xs-12">
                     <p class="content-1">
                         {{faq.questions}}
                     </p>
@@ -26,23 +34,45 @@
                         <span>{{faq.likes}}</span>
                         <p>人觉得有用</p>
                     </div>
-                </div>
+          </div>
+        </div>
+          <div class="xiangguan row">
+            <div class="col-xs-12">
+              <p class="xiangguan-1">相关问题：</p>
             </div>
-            <div class="xiangguan">
-                <p class="xiangguan-1">相关问题：</p>
+              <div class="col-xs-12">
                 <ul class="xiangguan-2">
                   {% for item in recommendFaq %}
                     <li><a href="/detail/{{item.id}}">{{item.asked}}</a></li>
                    {% endfor %}
                 </ul>
-            </div>
-            <div class="down">
+              </div>        
+          </div>
+            <div class="row">
+              <div class="down col-xs-12">
                 <ul class="footer">
                     <li class="footer-1"></li>
-                    <a href="/feedback/{{faq.id}}"><li class="footer-2"></li></a>
+                    <div class="row">
+                      <div class="col-xs-4 col-xs-offset-4 tiwen">
+                         <div class="text-center">
+                          <a href="/feedback/{{faq.id}}">
+                           
+                          <li class="footer-2">
+                        <img src="/static/mobile/img/2.png" alt="">
+                      </li>
+                    </a>
+                     </div>   
+                         
+                      </div>
+                    </div>
+                   
                     <li class="footer-3"></li>
                 </ul>
             </div>
+            </div>
+            
+</div>
+     
 {% endblock %}
 
 {% block afterScript %}

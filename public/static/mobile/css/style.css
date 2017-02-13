@@ -1,40 +1,30 @@
-/*= reset begin*/
-
-body,
-div,
-p,
-img,
-a ,
-select,
-option,
-input ,
-label {
-    padding: 0;
-    margin: 0;
-}
 input{
     border: none;
 }
-ul,
-li {
+ul,li {
     margin: 0;
     padding: 0;
     list-style: none;
 }
-
 img {
     border: none;
     display: inline-block;
 }
-
 a {
-	/*display: inline-block;*/
     text-decoration: none;
-    /*text-indent: -99999px;*/
     color: #000;
 }
-
-a:hover {
-    /*text-decoration: underline;*/
+.banner{
+	color: #fff;
+	background-color: #65a3dd;
 }
-
+.banner a{
+	float: left;
+	margin-left: 20px;
+	padding-top: 13px;
+}
+.banner p{
+	font-size: 36px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}

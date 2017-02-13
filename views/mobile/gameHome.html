@@ -9,42 +9,59 @@
 <link rel="stylesheet" type="text/css" href="/static/mobile/css/classify.css">
 {% endblock %}
 
+{% block afterHead %}
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="stylesheet" href="/static/bootstrap/bootstrap-theme.min.css">
+{% endblock %}
+
 {% block content %}
-<div class="banner">
-            <div class="banner">
-            <a class="banner-1" href="/"><img src="/static/mobile/img/banner.png" alt=""></a>
-            <p class="banner-2">{{game.name}}</p>
-            <!-- <a class="banner-3" href="/feedback/{{game.id}}"><img src="/static/mobile/img/jiantou.png" alt=""></a> -->
+<div class="container-fulid">
+    <div class="row banner">
+    <div class="col-xs-12">
+      <div class="text-center">
+         <p class="banner-2">{{game.name}}</p>
+      </div>
+       
+    </div>        
     </div>
-    </div>
-    <div class="search">
+    <div class="row">
+      <div class="search col-xs-10 col-xs-offset-1">
        <form class="search-0">
-        <input type="text" class="search-1" placeholder="输入关键字搜索" onkeypress="if(event.keyCode==13) {searchByGame();return false;}">
-        <img class="search-2" src="/static/mobile/img/fangdajing.png" alt="" onclick="searchByGame()">
+        <div class="row">
+          <div class="col-xs-8">
+            <div class="text-center">
+              <input type="text" class="search-1" placeholder="输入关键字搜索" onkeypress="if(event.keyCode==13) {searchByGame();return false;}">
+            </div>
+            
+          </div>
+          <div class="col-xs-4 text-center">
+             <img class="search-2" src="/static/mobile/img/fangdajing.png" alt="" onclick="searchByGame()">
+          </div>
+        </div>
+        
         </form>
     </div>
-    <div class="wenti">
-        <p>按问题类别查找</p>
     </div>
-    <!-- <div class="all">
-        <div class="shang">
-        <div class="shang-1"><a href="number.html"><p>账号及充值</p></a></div>
-        <div class="shang-2"><a href="number.html"><p>游戏玩法攻略</p></a></div>
-    </div> -->
-    <div class="xia">
+    <div class="row">
+        <div class="wenti col-xs-10 col-xs-offset-1">
+          <p>按问题类别查找</p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="xia col-xs-12">
         {% for item in categoryQueryList %}
-          <div class="xia-2"><a href="/{{game.id}}/{{item.categoryFaq.id}}"><p>{{item.categoryFaq.name}}</p></a></div>
+           <div class="xia-2 col-xs-6">
+            <a href="/{{game.id}}/{{item.categoryFaq.id}}"><p>{{item.categoryFaq.name}}</p></a>
+          </div>
+           
         {% endfor %}
     </div>
     </div>
 
-    <!-- <div class="down">
-        <ul class="footer">
-            <li class="footer-1"></li>
-            <li class="footer-2"></li>
-            <li class="footer-3"></li>
-        </ul>
-    </div> -->
+    </div>
+</div>
+
 {% endblock %}
 {% block afterScript %}
  <script type="text/javascript">

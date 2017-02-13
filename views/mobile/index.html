@@ -6,21 +6,34 @@
 
 
 {% block css %}
+ <meta name="viewport" content="width=device-width,target-densitydpi=320, minimum-scale=0.5, maximum-scale=2,user-scalable=0">
 <link rel="stylesheet" type="text/css" href="/static/mobile/css/index.css">
 {% endblock %}
 
 {% block content %}
-<div class="wrap">
-     <div class="banner">
-         <img src="/static/mobile/img/banner.png" alt="">
-         <p>选择游戏</p>
+     <div class="container-fulid banner">
+        <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12">
+           <div class="text-center"><p>选择游戏</p></div>
+            
+        </div>
+         
+        </div>
+         
      </div>
-     <p class="asd">请选择游戏产品</p>
-     <ul class="gamelist">
-         {% for item in gameList %}
-            <li class="gamename"><a href="/{{item.id}}"><p>{{ item.name }}</p> <img src="/static/mobile/img/sanjiao.png" alt="{{ item.name }}"></a></li>
-         {% endfor %}
-     </ul>
+     <div class="container-fulid">
+          <div class="row">
+              <div class="col-md-12 col-xs-12 col-sm-12">
+                 <ul class="gamelist">
+                      
+                     {% for item in gameList %}
+                   <a href="/{{item.id}}"><li class="gamename"><p>{{ item.name }}</p> <img src="/static/mobile/img/sanjiao.png" alt="{{ item.name }}"></li></a>
+                  {% endfor %}
+                 </ul>
+               
+              </div>
 
- </div>
+          </div>
+      </div>     
 {% endblock %}
+

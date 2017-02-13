@@ -2,58 +2,47 @@ body{
 	background-color: #f6f6f6;
 	font-family: 微软雅黑;
 	color: #696969;
+	font-size:62.5%;
 }
 .banner{
 	color: #fff;
-	height: 90px;
+	padding-top: 10px;
+	padding-bottom: 10px;
 	background-color: #65a3dd;
 }
-.banner .banner-1{
-	float: left;
-	line-height: 90px;
-	margin-left: 20px;
-	padding-top: 13px;
-}
 .banner .banner-2{
-	float: left;
-	font-size: 36px;
-	padding-top: 20px;
-	margin-left: 208px;
+	font-size: 3.6rem;
+	margin: 0 auto;
+	text-align: center;
 }
 .banner .banner-3{
-	width: 40px;height: 40px;
+	width: 40px;
+	height: 40px;
 	float: right;
 	margin-right: 23px;
 	line-height: 90px;
 	margin-top: 14px;
 }
 .search{
-	padding-top: 30px;
-	padding-bottom: 30px;
+	padding-top: 15px;
+	padding-bottom: 15px;
 }
 .search-0{
-	width: 550px;
 	height: 64px;
-	line-height: 150px;
-	background-image: url(../img/yuan.png); 
+
 	background-repeat: no-repeat;
 	margin: 0 auto;
 }
 .search-1{
 	border: 0px;
 	font-size: 20px;
-	width: 450px;
+	display: inline-block;
 	height: 45px;
 	margin-top: 9px;
-	float: left;
-	margin-left: 20px;
 }
 .search-2{
 	margin-right: 20px;
 	margin-top: 10px;
-	float: right;
-	width: 40px;
-	height: 40px;
 }
  ::-webkit-input-placeholder {
            font-size: 18px;
@@ -70,14 +59,9 @@ body{
    font-size: 18px;
 }
 
-.wenti{
-	height: 70px;
-}
 .wenti p{
 	color: #65a3dd;
-	width: 580px;
 	margin: 0 auto;
-	line-height: 70px;
 	font-size: 24px;
 }
 
@@ -90,22 +74,15 @@ body{
 	margin: 0 auto;
 }
 
-.xia{
-	
-	width: 555px;
-	height: 60px;
-	margin-left: 36px;
-}
 .xia-2{
-	margin-top: 30px;
+	margin-top: 10px;
 	font-size: 24px;
-	float: right;
-	width: 260px;
-	height: 60px;
-	line-height: 60px;
-	background-image: url(../img/tuoyuan.png);
 }
-
+.xia-2 p{
+	background-color: #eee;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
 .down{
 	width: 640px;
 	position: fixed;

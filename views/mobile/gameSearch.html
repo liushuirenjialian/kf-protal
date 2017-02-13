@@ -9,19 +9,48 @@
 <link rel="stylesheet" type="text/css" href="/static/mobile/css/result.css">
 {% endblock %}
 
+{% block afterHead %}
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="stylesheet" href="/static/bootstrap/bootstrap-theme.min.css">
+{% endblock %}
+
 {% block content %}
-<div class="banner">
-            <a href="/{{game.id}}"><img src="/static/mobile/img/banner.png" alt=""></a>
-            <p>{{game.name}}</p>
+<div  class="container-fulid">
+    <div class="banner row">
+        <div class="col-xs-2">
+             <a href="/{{game.id}}"><img src="/static/mobile/img/banner.png" alt=""></a>
         </div>
+        <div class="col-xs-8">
+            <div class="text-center">
+                <p >{{game.name}}</p>
+            </div>
+            
+        </div>   
+            
+    </div>
     <div class="wrap">
-        <p>
-          查询 <span>{{query}}</span> 结果
-        </p>
-        <ul class="gamelist">
+        <div class="row">
+            <p class="col-xs-12 result">查询 <span>{{query}}</span> 结果
+            </p>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <ul class="gamelist">
             {% for item in categoryQueryList %}
-            <li><a href="/detail/{{item.id}}"><p>{{item.asked}}</p><img src="/static/mobile/img/sanjiao.png" alt="{{item.asked}}"></a></li>
+            <a href="/detail/{{item.id}}"><li>
+                <div class="row">
+                    <div class="col-xs-8"><p>{{item.asked}}</p></div>
+                    <div class="col-xs-2 col-xs-offset-2">
+                        <img src="/static/mobile/img/sanjiao.png" alt="{{item.asked}}">
+                    </div>
+                </div> 
+            </li></a>
             {% endfor %}
         </ul>
+            </div>
+        </div>
+        
     </div>
+</div>
+
 {% endblock %}

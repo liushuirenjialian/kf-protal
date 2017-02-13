@@ -10,15 +10,25 @@
 {% endblock %}
 
 {% block content %}
-<div class="banner">
+<div class="container-fulid">
+    <div class="banner row">
+        <div class="col-xs-2">
             <a href="/{{game.id}}"><img src="/static/mobile/img/banner.png" alt=""></a>
-            <p>{{categoryFaq.name}}</p>
         </div>
-    <div class="wrap">
-        <ul class="gamelist">
-            {% for item in categoryQueryList %}
-            <li><a href="/detail/{{item.id}}"><p>{{item.asked}}</p><img src="/static/mobile/img/sanjiao.png" alt="{{item.asked}}"></a></li>
-            {% endfor %}
-        </ul>
+        <div class="col-xs-8">
+            <div class="text-center"><p>{{categoryFaq.name}}</p></div>
+            
+        </div>            
     </div>
+    <div class="wrap row">
+        <div class="col-xs-12">
+            <ul class="gamelist">
+            {% for item in categoryQueryList %}
+            <a href="/detail/{{item.id}}"><li><p>{{item.asked}}</p><img src="/static/mobile/img/sanjiao.png" alt="{{item.asked}}"></li></a>
+            {% endfor %}
+            </ul>
+        </div>        
+    </div>
+</div>
+
 {% endblock %}

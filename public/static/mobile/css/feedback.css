@@ -4,34 +4,30 @@ body{
 }
 .banner{
 	color: #fff;
-	height: 90px;
 	background-color: #65a3dd;
 }
 .banner a{
 	float: left;
-	line-height: 90px;
 	margin-left: 20px;
-	padding-top: 3px;
+	padding-top: 9px;
 }
 .banner p{
-	width: 590px;
 	margin: 0 auto;
 	text-align: center;
-	float: right;
 	font-size: 36px;
-	padding-top: 20px;
-	/*margin-right: 208px;*/
+	padding-top: 5px;
+	padding-bottom: 5px;
 }
 
 .last{
 	font-size: 24px;
 }
 .wenti p{
-	padding-top: 80px;
-	font-size: 28px;
+	padding-top: 10px;
+	font-size: 24px;
+	margin-left: 10px;
 }
 .wrap{
-	width: 580px;
 	margin: 0 auto;
 	color: #000;
 }
@@ -40,7 +36,7 @@ body{
 	margin-top: 80px;
 }
 .leibie p{
-	font-size: 28px;
+	font-size: 24px;
 }
 .wrap .leibie-1{
 	color: #000;
@@ -62,23 +58,21 @@ body{
 	font-size: 24px;
 }
 .yijian p{
-	font-size: 28px;
-	height: 64px;
-	line-height: 65px;
+	font-size: 24px;
+	margin-left: 10px;
 }
 .wrap .yijian-2{
 	display: inline-block;
-	width: 580px;
-	height: 270px;
 	font-size: 20px;
 }
+.wrap .yijian-2 textarea{
+	display: inline-block;
+}
 .wrap .tijiao{
-	width: 580px;
 	height: 60px;
-	margin-top: 32px;
+	margin-top: 10px;
 	background-color: #f6987b;
 	font-size: 28px;
-	color: #fff;
 	border-radius: 6px;
 	border-left:0px;border-top:0px;border-right:0px;border-bottom:0px;
 
