@@ -9,21 +9,19 @@ body{
 .banner a{
 	float: left;
 	margin-left: 20px;
-	padding-top: 9px;
+	padding-top: 4px;
 }
 .banner p{
 	margin: 0 auto;
 	text-align: center;
 	font-size: 36px;
-	padding-top: 5px;
-	padding-bottom: 5px;
 }
 
 .last{
 	font-size: 24px;
 }
 .wenti p{
-	padding-top: 10px;
+	padding-top: 5px;
 	font-size: 24px;
 	margin-left: 10px;
 }

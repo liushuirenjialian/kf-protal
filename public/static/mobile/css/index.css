@@ -7,23 +7,23 @@
 body{
 	background-color: #f6f6f6;
 }
-.banner{
+.banner0{
 	color: #fff;
 	margin-bottom: 10px;
 	background-color: #65a3dd;
 }
-.banner img{
+.banner0 img{
 	float: left;
     line-height: 75px;
     margin-left: 20px;
     padding-top: 8px;
 }
-.banner p{
-	line-height: 60px;
-	text-align: left;
+.banner0 p{
+	padding-top: 5px;
+    padding-bottom: 5px;
 	margin-left: 15px;
 	// float: right;
-	font-size: 36px;
+	font-size: 30px;
 	// padding-top: 20px;
 	// margin-right: 248px;
 }

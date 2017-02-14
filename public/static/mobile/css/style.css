@@ -17,16 +17,15 @@ a {
 .banner{
 	color: #fff;
 	background-color: #65a3dd;
+	margin-bottom: 6px;
 }
 .banner a{
 	float: left;
 	margin-left: 20px;
-	padding-top: 13px;
+	padding-top: 3px;
 }
 .banner p{
-	font-size: 36px;
-	padding-top: 10px;
-	padding-bottom: 10px;
+	font-size: 34px;
 }
 
 .white-bg {
